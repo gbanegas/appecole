@@ -1,25 +1,6 @@
 
 \documentclass[11pt, a4paper]{article}
-
-\usepackage{graphicx}
-\usepackage{helvet}
-\usepackage[utf8]{inputenc}
-\renewcommand\familydefault{\sfdefault}
-\usepackage{pgfgantt}       % Pour les diagrammes de Gantt
-\usepackage{xcolor}
-\usepackage{pdflscape}
-\usepackage{url}
-
-\pagestyle{empty}
-
-\newcommand*{\cventry}[7][.25em]{}
-\newcommand*{\cvitem}[3][.25em]{}
-\renewcommand*{\refname}{\subsection*{Publications}}
-
-\ganttset{group/.append style={orange},
-milestone/.append style={red},
-progress label node anchor/.append style={text=red}}
-
+\input{package_macros.tex}
 
 \begin{document}
 
@@ -39,61 +20,8 @@ progress label node anchor/.append style={text=red}}
 
 \begin{landscape}
 \section{Calendrier}
-\begin{ganttchart}[%Specs
-     y unit title=0.5cm,
-     y unit chart=0.7cm,
-     vgrid,hgrid,
-     title height=1,
-%     title/.style={fill=none},
-     title label font=\bfseries\footnotesize,
-     bar/.style={fill=blue},
-     bar height=0.7,
-%   progress label text={},
-     group right shift=0,
-     group top shift=0.7,
-     group height=.3,
-     group peaks width={0.2},
-     inline]{1}{36}
-    %labels
-    \gantttitle{A three-years project}{36}\\  % title 1
-    \gantttitle[]{2013}{12}                 % title 2
-    \gantttitle[]{2015}{12} 
-    \gantttitle[]{2016}{12}\\              
-    \gantttitle{Q1}{3}                      % title 3
-    \gantttitle{Q2}{3}
-    \gantttitle{Q3}{3}
-    \gantttitle{Q4}{3}
-    \gantttitle{Q1}{3}
-    \gantttitle{Q2}{3}
-    \gantttitle{Q3}{3} 
-    \gantttitle{Q4}{3}
-    \gantttitle{Q1}{3}
-    \gantttitle{Q2}{3}
-    \gantttitle{Q3}{3} 
-    \gantttitle{Q4}{3}\\
-    % Setting group if any
-    \ganttgroup[inline=false]{Group 1}{1}{5}\\ 
-    \ganttbar[progress=10,inline=false]{Planning}{1}{4}\\
-    \ganttmilestone[inline=false]{Milestone 1}{9} \\
+\input{calendar.tex}
 
-    \ganttgroup[inline=false]{Group 2}{6}{12} \\ 
-    \ganttbar[progress=2,inline=false]{test1}{10}{19} \\
-    \ganttmilestone[inline=false]{Milestone 2}{17} \\
-    \ganttbar[progress=5,inline=false]{test2}{11}{20} \\
-    \ganttmilestone[inline=false]{Milestone 3}{22} \\       
-
-    \ganttgroup[inline=false]{Group 3}{13}{24} \\ 
-    \ganttbar[progress=90,inline=false]{Task A}{13}{15} \\ 
-    \ganttbar[progress=50,inline=false, bar progress label node/.append style={below left= 10pt and 7pt}]{Task B}{13}{24} \\ \\
-    \ganttbar[progress=30,inline=false]{Task C}{15}{16}\\ 
-    \ganttbar[progress=70,inline=false]{Task D}{18}{20} \\ 
-
-    \ganttgroup[inline=false]{Group 3}{25}{36} \\ 
-    \ganttbar[progress=90,inline=false]{Task A}{25}{28} \\ 
-    \ganttbar[progress=50,inline=false, bar progress label node/.append style={below left= 10pt and 7pt}]{Task B}{27}{28} \\ \\
-    \ganttbar[progress=30,inline=false]{Task C}{25}{36}\\ 
-\end{ganttchart}
-\end{landscape}
 \newpage
 \section{CV}
 \begin{enumerate}
@@ -111,147 +39,13 @@ progress label node anchor/.append style={text=red}}
 \end{enumerate}
 
 \subsection*{Work Experience}
+\medskip
 
-\begin{itemize}
-    \item \textbf{Researcher}, \textsc{INRIA}, Palaiseau, France (Oct/2024 -- Current)
-    \begin{itemize}
-        \item Conduct cryptography research in the following areas, among others:
-        \begin{itemize}
-            \item Secure implementation of post-quantum cryptography.
-            \item Design and development of specialized hardware for post-quantum cryptography.
-            \item Creation of countermeasures to mitigate side-channel vulnerabilities.
-        \end{itemize}
-    \end{itemize}
+\input{cv.tex}
 
-    \item \textbf{Senior Cryptographer}, \textsc{Qualcomm}, Sophia Antipolis, France (Jul/2022 -- Sept/2024)
-    \begin{itemize}
-        \item Development of post-quantum cryptography on Snapdragon processors, including but not limited to:
-        \begin{itemize}
-            \item Design and develop specific hardware for post-quantum cryptography.
-            \item Development of new attacks on post-quantum cryptography (side-channel attacks).
-            \item Development of countermeasures against side-channel attacks.
-            \item Speed-up implementations on Cortex-M3 and M4.
-            \item Development of post-quantum cryptography for RISC-V. 
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Post-doc}, \textsc{INRIA and \'{E}cole polytechnique}, Paris, France (Dec/2020 -- Jul/2022)
-    \begin{itemize}
-        \item Development of post-quantum cryptography in embedded devices:
-        \begin{itemize}
-            \item Development of new attacks on post-quantum cryptography (side-channel attacks).
-            \item Development of countermeasures against side-channel attacks.
-            \item Speed-up implementations of cryptographic signatures for RIOT-OS.
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Post-doc}, \textsc{Chalmers University of Technology}, Gothenburg, Sweden (Nov/2019 -- Nov/2020)
-    \begin{itemize}
-        \item Development of the WASP Project:
-        \begin{itemize}
-            \item Development of new attacks on post-quantum cryptography.
-            \item Development of post-quantum cryptography.
-            \item Development of verifiable functions.
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Research Assistant}, \textsc{Chalmers University of Technology}, Gothenburg, Sweden (Sep/2019 -- Nov/2019)
-    \begin{itemize}
-        \item Development of the WASP Project:
-        \begin{itemize}
-            \item Development of new attacks on post-quantum cryptography.
-            \item Development of post-quantum cryptography.
-            \item Development of verifiable functions.
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Intern}, \textsc{Cryptoexperts}, Paris, France (Sep/2018 -- Nov/2018)
-    \begin{itemize}
-        \item Side-channel attacks on post-quantum cryptography implementations.
-        \begin{itemize}
-            \item Detected leakage of timing in operations to develop timing attacks.
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Intern}, \textsc{Riscure}, Delft, Netherlands (Feb/2017 -- Apr/2017)
-    \begin{itemize}
-        \item Side-channel attacks on ECC implementations.
-        \begin{itemize}
-            \item Investigated attacks on implementations of ECC in FPGAs using power analysis.
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{System Analyst}, \textsc{BRy Tecnologia}, Florian\'{o}polis, Brazil (Oct/2014 -- Sep/2015)
-    \begin{itemize}
-        \item Software development for Public Key Infrastructure (PKI).
-        \begin{itemize}
-            \item Developed software in Java and C++.
-            \item Integrated HSM in Java applications.
-            \item Managed a team using Scrum.
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Researcher, Project Manager, and Developer}, \textsc{LabSEC - Laboratory for Computer Security}, Florian\'{o}polis, Brazil (Nov/2009 -- Oct/2014)
-    \begin{itemize}
-        \item Researcher in cryptography, project manager, and developer of security software using \textit{Java}, \textit{C/C++}, and \textit{Python}.
-        \begin{itemize}
-            \item Researched cryptography applied to PKI.
-            \item Managed the project reference for the Brazilian PKI.
-            \item Managed the project defining attribute certification in Brazil.
-            \item Developed software in C/C++, Java, and Python.
-        \end{itemize}
-    \end{itemize}
-
-\end{itemize}
-
-\subsection*{Program Committee Member}
-\begin{itemize}
-    \item CBCrypto: 2020, 2021
-    \item CHES: 2022, 2023, 2024
-    \item Eurocrypt: 2022
-    \item LatinCrypt: 2023
-    \item Asiacrypt: 2023
-    \item ACNS: 2024
-\end{itemize}
-
-\subsection*{External Reviewer}
-\begin{itemize}
-    \item CRYPTO: 2022
-    \item Asiacrypt: 2018, 2019, 2020, 2021
-    \item FSE: 2021
-    \item LatinCrypt: 2021
-    \item SPACE: 2020
-    \item PQCrypto: 2018
-\end{itemize}
-
-\subsection*{Software}
-\begin{itemize}
-    \item \textbf{WAVE}: \url{https://github.com/wavesign/wave}
-    \item \textbf{Wavelet}: \url{https://github.com/wavelet/}
-    \item \textbf{CTIDH}: \url{http://ctidh.isogeny.org/software.html}
-    \item \textbf{DAGS Key encapsulation}: \url{https://github.com/gbanegas/dags_v2}
-    \item \textbf{HSS/LMS hash-based signatures}: \url{https://github.com/gbanegas/sphss}
-    \item \textbf{More code}: \url{https://github.com/gbanegas/}
-\end{itemize}
-
-\subsection*{Supervision: Master Theses}
-\begin{itemize}
-    \item \textbf{Maya--Iggy van Hoof}:  
-    \textit{Concrete quantum-cryptanalysis of binary elliptic curves}, Eindhoven University of Technology, 2019.
-\end{itemize}
-
-\subsection*{Supervision: Bachelor Theses}
-\begin{itemize}
-    \item \textbf{Sigurjon Agustsson}:  
-    \textit{Montgomery Reduction in RSA}, École Polytechnique, 2021.
-    
-    \item \textbf{David Brandberg, Lisa Fahlbeck, Henrik Hellström, Hampus Karlsson, John Kristoffersson, Lukas Sandman}:  
-    \textit{End-to-end Encrypted Instant Messaging Application}, Chalmers University of Technology, 2020.
-\end{itemize}
-
-\nocite{*}
-\bibliographystyle{plainyr-rev} 
-\bibliography{publications}   
+%\nocite{*}
+%\bibliographystyle{plainyr-rev} 
+%\bibliography{publications}   
 
 \end{document}
 
