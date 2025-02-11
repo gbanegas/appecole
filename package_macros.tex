@@ -4,7 +4,6 @@
 \usepackage[utf8]{inputenc}
 \renewcommand\familydefault{\sfdefault}
 \usepackage{pgfgantt}       % Pour les diagrammes de Gantt
-\usepackage{xcolor}
 \usepackage{pdflscape}
 \usepackage{url}
 
@@ -32,10 +31,18 @@
 \usepackage{caption}
 \usepackage{setspace}
 
+\usepackage{geometry}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage[table, dvipsnames]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+
 \pagestyle{empty}
 
-\newcommand*{\cventry}[7][.25em]{}
-\newcommand*{\cvitem}[3][.25em]{}
+\geometry{a4paper, margin=1in}
 
 \ganttset{group/.append style={orange},
 milestone/.append style={red},

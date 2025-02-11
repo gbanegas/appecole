@@ -22,7 +22,7 @@
 Research in post-quantum cryptography (PQC) has been boosted since 
 \href{https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization/call-for-proposals}
 {the National Institute of Standards and Technology (NIST) initiated its PQC standardization project in 2016}. 
-The development of PQC schemes typically progresses through four stages:
+The development of PQC schemes minimally progresses through four stages:
 \begin{enumerate}
 \setlength{\itemsep}{0.1pt}
 \item \textbf{Mathematical Foundations}: Assessing the computational hardness of underlying mathematical problems;
@@ -34,9 +34,9 @@ While many schemes, such as Kyber and Dilithium, have reached stages three or fo
 PQC research remains an active field. There are still numerous open problems and challenges, 
 particularly following \href{https://www.nist.gov/news-events/news/2023/07/nist-announces-additional-digital-signature-candidates-pqc-standardization}
 {NIST's announcement of new candidates for post-quantum signatures in 2023}. 
-Additionally, enhancing efficiency and strengthening implementations against side-channel attacks (SCAs) 
+Additionally, enhancing efficiency and strengthening implementations against side-channel attacks (SCA) 
 are ongoing priorities. It is also essential to adapt PQC to current applications, including communication protocols, 
-hardware security modules (HSMs), and various scenarios such as the Internet of 
+hardware security modules (HSM), and various scenarios such as the Internet of 
 Things (IoT) and vehicular communication.
 
 In this research project, I will delineate the challenges that PQC confronts 
@@ -65,35 +65,107 @@ Unfortunately, the pool of individuals capable of combining these
 essential skills remains limited to a select group of professionals.
 
 
-This research proposal focuses on the security evaluation of 
-post-quantum digital signature schemes in the latest NIST 
-call, with a particular emphasis on side-channel analysis. 
-The primary objectives of this research are:
 
-\begin{itemize}
-\setlength{\itemsep}{0.1pt}
-    \item \textbf{Evaluation of Side-Channel Attacks}: Analyzing vulnerabilities in selected signature schemes by applying both passive and active side-channel techniques, such as power analysis, fault injection, and electromagnetic analysis.
-    \item \textbf{Design of Countermeasures}: Developing robust mitigation strategies tailored to each scheme, including masking, blinding, and fault detection mechanisms.
-    \item \textbf{Benchmarking \& Validation}: Assessing the effectiveness of the proposed countermeasures by measuring their security, computational overhead, and feasibility for real-world deployment.
-\end{itemize}
+Producing new knowledge in this domain aligns with the objectives of the new cybersecurity 
+master's program at \emph{École Polytechnique de Paris}, which aims to equip students with advanced 
+expertise in cryptographic security, hardware security, and side-channel analysis. By fostering 
+research and innovation in these critical areas, the program contributes to the development of 
+next-generation security professionals capable of addressing emerging threats in cryptography 
+and beyond.
 
+This proposal establishes a comprehensive security evaluation framework for 
+post-quantum digital signature schemes under consideration in the
+NIST ongoing standardization process. 
+The study focuses specifically on side-channel attack resilience, a
+ddressing critical gaps in practical security assessment through three 
+synergistic objectives.
+
+
+\begin{enumerate}[leftmargin=*, label=\textbf{\arabic*.}, series=main]
+    \item \textbf{Systematic Vulnerability Analysis}
+    \begin{itemize}[leftmargin=2em]
+        \item Investigation targets: NIST PQC candidates
+        \item Attack methodologies:
+        \begin{itemize}
+            \item \textit{Passive}: Time analysis, and Differential power analysis (DPA)
+            \item \textit{Active}: Clock and voltage glitching
+        \end{itemize}
+    \end{itemize}
+    
+    \item \textbf{Adaptive Countermeasure Design}
+    \begin{itemize}[leftmargin=2em]
+        \item Algorithm-aware protection strategies:
+        \begin{itemize}
+            \item Dynamic masking for lattice-based schemes
+            \item Error-canceling blinding for FFT-dependent operations
+        \end{itemize}
+    \end{itemize}
+    
+    \item \textbf{Quantitative Security Benchmarking}
+    \begin{center}
+    \rowcolors{2}{gray!20}{white} % Added row coloring with alternation
+    \begin{tabularx}{0.9\textwidth}{|l|X|}
+        \toprule
+        \rowcolor{gray!40} % Darker header row
+        \textbf{Metric} & \textbf{Evaluation Methodology} \\
+        \midrule
+        Side-channel resistance & Test Vector Leakage Assessment (TVLA) with $t > 4.5$ threshold \\
+        Computational overhead & Cycle count analysis vs. NIST baseline specifications \\
+        Energy efficiency & Per-signature measurements (mJ/operation) \\
+        Standardization readiness & FIPS 140-3 compliance mapping \\
+        \bottomrule
+    \end{tabularx}
+    \end{center}
+\end{enumerate}
+
+\section*{Methodological Approach}
+The proposed framework employs a three-phase iterative process:
+\begin{enumerate}
+    \item \textit{Attack surface enumeration}: Formal verification of cryptographic primitives using ProVerif
+    \item \textit{Countermeasure prototyping}: RTL implementation in SystemVerilog
+    \item \textit{Validation}: ASIC/FPGA testing on Xilinx UltraScale+ platforms
+\end{enumerate}
+
+
+To achieve the goals we will require the acquisition of certain materials presented in 
+Table~\ref{tab:hardware_components}. Moreover, I plan to to hire a PhD student to study 
+hardware security. 
+
+The methodology that we will follow can be seen in Figure~\ref{fig:methodology}
 
 \subsection*{Impacts, Outcomes, and Ambitions}
 
 The results of this research will contribute to the broader scientific community by:
 
-\begin{itemize}
-\setlength{\itemsep}{0.1pt}
-    \item \textbf{Publications}: Targeting top-tier cryptography and security conferences/journals such as CHES, EUROCRYPT, CRYPTO, and IEEE Transactions on Information Forensics and Security.
-    \item \textbf{Conferences \& Collaborations}: Engaging with academic and industrial partners to disseminate findings, participate in research workshops, and enhance interdisciplinary knowledge exchange.
-    \item \textbf{Industrial Impact}: Establishing connections with industry stakeholders, particularly in embedded security and hardware-based cryptographic implementations, to assess the practical adoption of countermeasures.
-    \item \textbf{Funding Prospects}: This work is positioned to support funding applications through agencies such as the European Research Council (ERC), the French National Research Agency (ANR), and cybersecurity-focused industrial partnerships.
-\end{itemize}
+\paragraph{Publications.} Targeting top-tier cryptography and security conferences and journals such as 
+CHES, EUROCRYPT, ASIACRYPT, IEEE Transactions on Information Forensics and Security, and the 
+Journal of Cryptographic Engineering.
+
+\paragraph{Conferences \& Collaborations.} Engaging in academic collaborations with international 
+early-career researchers, including \href{https://mtrimoska.com/}{Monika Trimoska} and 
+\href{https://www.sopmac.de/index.html}{Fábio Campos}, as well as continuing partnerships 
+with other international researchers like \href{https://research.aalto.fi/en/persons/chris-brzuska}{Chris Brzuska} 
+and Łukasz Chmielewski. Additionally, initiating a project with local researcher Guénaël Renault. 
+Participation in research workshops and summer schools, such as the 
+\href{https://summerschool-croatia.cs.ru.nl/}{Summer School on Real-World Cryptography and Privacy}, 
+is also planned.
+
+\paragraph{Industrial Impact.} Establishing connections with industry stakeholders, particularly in 
+embedded security and hardware-based cryptographic implementations, to assess the practical adoption of 
+countermeasures. My background with \href{https://www.qualcomm.com/}{Qualcomm} facilitates establishing 
+connections for future collaborations. Moreover, I have connections with professionals like Matthieu Rivain 
+and Sonia Belaïd from \href{https://www.cryptoexperts.com/people/}{CryptoExperts}, and with Christine 
+Cloostermans at \href{https://www.nxp.com/company/about-nxp/smarter-world-blog/BL-EMBRACING-EQUITY-ON-EVERY-LEVEL}{NXP}, 
+opening avenues for further industrial partnerships.
+
+\paragraph{Funding Prospects.} This work is positioned to support funding applications through agencies such as 
+the European Research Council (ERC), the French National Research Agency (ANR), and 
+cybersecurity-focused industrial partnerships.
 
 
 
-\begin{figure}
-\begin{center}
+%\begin{figure}
+%\begin{center}
 %\resizebox{.5\textwidth}{!}{
 %\framebox{
 %    \begin{tikzpicture}[node distance=2cm]
@@ -113,10 +185,11 @@ The results of this research will contribute to the broader scientific community
 
 %    \end{tikzpicture}
 %    }
-\includegraphics[scale=0.4]{cycle.png}
-\caption{Overview of the methdology for the project.}
-\end{center}
-\end{figure}
+%\includegraphics[scale=0.4]{cycle.png}
+%%\caption{Overview of the methdology for the project.}
+%\label{fig:methodology}
+%\end{center}
+%\end{figure}
 
 
 
@@ -133,12 +206,6 @@ The results of this research will contribute to the broader scientific community
 %\textbf{studying quantum algorithms}, to harden PQC algorithms.
 
 
-Producing new knowledge in this domain aligns with the objectives of the new cybersecurity 
-master's program at École Polytechnique de Paris, which aims to equip students with advanced 
-expertise in cryptographic security, hardware security, and side-channel analysis. By fostering 
-research and innovation in these critical areas, the program contributes to the development of 
-next-generation security professionals capable of addressing emerging threats in cryptography 
-and beyond.
 
 \paragraph{Budget}
 
@@ -148,16 +215,16 @@ and beyond.
 \label{tab:hardware_components}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{|l|p{8cm}|c|c|l|}
-\hline
-\textbf{Hardware} & \textbf{Usage} & \textbf{Qty} & \textbf{Total Price (€)} & \textbf{Link} \\ \hline
+\toprule
+\textbf{Hardware} & \textbf{Usage} & \textbf{Qty} & \textbf{Total Price (€)} & \textbf{Link} \\ \midrule
 Husk Board & Side-channel acquisition / fault attack & 2 & 1060 & \href{https://www.mouser.fr/ProductDetail/NewAE/NAE-CWHUSKY-SK1?qs=rQFj71Wb1eUq6zUbSt2x8g\%3D\%3D}{Mouser} \\ \hline
-Server & Run analysis and store the data acquired by the boards. & 1 & & \\ \hline
-Polarfire FPGA & Development of specific hardware for cryptography & 1 & 150 & \href{https://www.microchip.com/en-us/development-tool/mpfs-disco-kit}{Microchip} \\ \hline
-Arty S7: Spartan-7 FPGA & Development of specific hardware for cryptography & 1 & 300 & \href{https://digilent.com/shop/arty-s7-spartan-7-fpga-development-board/}{Digilent} \\ \hline
-CW-lite ARM & Small ARM board for side-channel attacks & 2 & 700 & \href{https://www.newae.com/products/nae-cwlite-arm}{NewAE} \\ \hline
-Nucleo ARM & Board with Cortex-M3/M4 & 4 & 400 & \\ \hline
-PicoScope 3000E & Oscilloscope & 1 & 4,225 & \href{https://www.picotech.com/oscilloscope/picoscope-3000e-series-500-mhz-5gs-digital-usb-oscilloscope?model=3418E}{PicoTech} \\ \hline
-Wires / Cables / Others & Connection with oscilloscope, soldering kit, etc. & 1 & 700 & \\ \hline
+Server & Run analysis and store the data acquired by the boards. & 1 & & \\ \midrule
+Polarfire FPGA & Development of specific hardware for cryptography & 1 & 150 & \href{https://www.microchip.com/en-us/development-tool/mpfs-disco-kit}{Microchip} \\ \midrule
+Arty S7: Spartan-7 FPGA & Development of specific hardware for cryptography & 1 & 300 & \href{https://digilent.com/shop/arty-s7-spartan-7-fpga-development-board/}{Digilent} \\ \midrule
+CW-lite ARM & Small ARM board for side-channel attacks & 2 & 700 & \href{https://www.newae.com/products/nae-cwlite-arm}{NewAE} \\ \midrule
+Nucleo ARM & Board with Cortex-M3/M4 & 4 & 400 & \\ \midrule
+PicoScope 3000E & Oscilloscope & 1 & 4,225 & \href{https://www.picotech.com/oscilloscope/picoscope-3000e-series-500-mhz-5gs-digital-usb-oscilloscope?model=3418E}{PicoTech} \\ \midrule
+Wires / Cables / Others & Connection with oscilloscope, soldering kit, etc. & 1 & 700 & \\ \bottomrule
 \end{tabular}%
 }
 \end{table}
