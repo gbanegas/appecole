@@ -65,21 +65,25 @@ Unfortunately, the pool of individuals capable of combining these
 essential skills remains limited to a select group of professionals.
 
 
-This research proposal focuses on the security evaluation of post-quantum digital signature schemes selected in the latest NIST call, with a particular emphasis on side-channel analysis (SCA). As cryptographic algorithms transition towards quantum resistance, their resilience to physical attacks remains a critical challenge. The primary objectives of this research are:
+This research proposal focuses on the security evaluation of 
+post-quantum digital signature schemes in the latest NIST 
+call, with a particular emphasis on side-channel analysis. 
+The primary objectives of this research are:
 
 \begin{itemize}
+\setlength{\itemsep}{0.1pt}
     \item \textbf{Evaluation of Side-Channel Attacks}: Analyzing vulnerabilities in selected signature schemes by applying both passive and active side-channel techniques, such as power analysis, fault injection, and electromagnetic analysis.
     \item \textbf{Design of Countermeasures}: Developing robust mitigation strategies tailored to each scheme, including masking, blinding, and fault detection mechanisms.
     \item \textbf{Benchmarking \& Validation}: Assessing the effectiveness of the proposed countermeasures by measuring their security, computational overhead, and feasibility for real-world deployment.
 \end{itemize}
 
-This work aligns with the strategic research priorities of the School, particularly in cybersecurity, cryptographic engineering, and embedded system security. It contributes to strengthening expertise in hardware security and advanced cryptographic implementations, reinforcing the School’s position as a leader in post-quantum cryptography research.
 
 \subsection*{Impacts, Outcomes, and Ambitions}
 
 The results of this research will contribute to the broader scientific community by:
 
 \begin{itemize}
+\setlength{\itemsep}{0.1pt}
     \item \textbf{Publications}: Targeting top-tier cryptography and security conferences/journals such as CHES, EUROCRYPT, CRYPTO, and IEEE Transactions on Information Forensics and Security.
     \item \textbf{Conferences \& Collaborations}: Engaging with academic and industrial partners to disseminate findings, participate in research workshops, and enhance interdisciplinary knowledge exchange.
     \item \textbf{Industrial Impact}: Establishing connections with industry stakeholders, particularly in embedded security and hardware-based cryptographic implementations, to assess the practical adoption of countermeasures.
@@ -112,8 +116,6 @@ The results of this research will contribute to the broader scientific community
 \includegraphics[scale=0.4]{cycle.png}
 \caption{Overview of the methdology for the project.}
 \end{center}
-
-
 \end{figure}
 
 
@@ -131,18 +133,34 @@ The results of this research will contribute to the broader scientific community
 %\textbf{studying quantum algorithms}, to harden PQC algorithms.
 
 
-Addressing another layer of complexity involves mitigating the countermeasure's impact on speed, code size, or hardware requirements. As part of my \textbf{mid-term goals} and in response to the NIST call for signatures, my ongoing efforts aim to propose efficient countermeasures against these attacks. This represents a vital step in advancing implementation security while maintaining a balance with practical considerations like speed and resource requirements. Fortunately, my background accelerates the comprehension of this process.
-
-
-
-
-
 Producing new knowledge in this domain aligns with the objectives of the new cybersecurity 
 master's program at École Polytechnique de Paris, which aims to equip students with advanced 
 expertise in cryptographic security, hardware security, and side-channel analysis. By fostering 
 research and innovation in these critical areas, the program contributes to the development of 
 next-generation security professionals capable of addressing emerging threats in cryptography 
 and beyond.
+
+\paragraph{Budget}
+
+\begin{table}
+\centering
+\caption{Budget for hardware equipment.}
+\label{tab:hardware_components}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|l|p{8cm}|c|c|l|}
+\hline
+\textbf{Hardware} & \textbf{Usage} & \textbf{Qty} & \textbf{Total Price (€)} & \textbf{Link} \\ \hline
+Husk Board & Side-channel acquisition / fault attack & 2 & 1060 & \href{https://www.mouser.fr/ProductDetail/NewAE/NAE-CWHUSKY-SK1?qs=rQFj71Wb1eUq6zUbSt2x8g\%3D\%3D}{Mouser} \\ \hline
+Server & Run analysis and store the data acquired by the boards. & 1 & & \\ \hline
+Polarfire FPGA & Development of specific hardware for cryptography & 1 & 150 & \href{https://www.microchip.com/en-us/development-tool/mpfs-disco-kit}{Microchip} \\ \hline
+Arty S7: Spartan-7 FPGA & Development of specific hardware for cryptography & 1 & 300 & \href{https://digilent.com/shop/arty-s7-spartan-7-fpga-development-board/}{Digilent} \\ \hline
+CW-lite ARM & Small ARM board for side-channel attacks & 2 & 700 & \href{https://www.newae.com/products/nae-cwlite-arm}{NewAE} \\ \hline
+Nucleo ARM & Board with Cortex-M3/M4 & 4 & 400 & \\ \hline
+PicoScope 3000E & Oscilloscope & 1 & 4,225 & \href{https://www.picotech.com/oscilloscope/picoscope-3000e-series-500-mhz-5gs-digital-usb-oscilloscope?model=3418E}{PicoTech} \\ \hline
+Wires / Cables / Others & Connection with oscilloscope, soldering kit, etc. & 1 & 700 & \\ \hline
+\end{tabular}%
+}
+\end{table}
 
 
 \begin{landscape}
