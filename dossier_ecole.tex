@@ -76,8 +76,8 @@ and beyond.
 This proposal establishes a comprehensive security evaluation framework for 
 post-quantum digital signature schemes under consideration in the
 NIST ongoing standardization process. 
-The study focuses specifically on side-channel attack resilience, a
-ddressing critical gaps in practical security assessment through three 
+The study focuses specifically on side-channel attack resilience, 
+addressing critical gaps in practical security assessment through three 
 synergistic objectives.
 
 
@@ -104,14 +104,17 @@ synergistic objectives.
     \item \textbf{Quantitative Security Benchmarking}
     \begin{center}
     \rowcolors{2}{gray!20}{white} % Added row coloring with alternation
-    \begin{tabularx}{0.9\textwidth}{|l|X|}
+    \begin{tabularx}{\textwidth}{|l|X|}
         \toprule
         \rowcolor{gray!40} % Darker header row
         \textbf{Metric} & \textbf{Evaluation Methodology} \\
         \midrule
         Side-channel resistance & Test Vector Leakage Assessment (TVLA) with $t > 4.5$ threshold \\
+         \midrule
         Computational overhead & Cycle count analysis vs. NIST baseline specifications \\
+         \midrule
         Energy efficiency & Per-signature measurements (mJ/operation) \\
+         \midrule
         Standardization readiness & FIPS 140-3 compliance mapping \\
         \bottomrule
     \end{tabularx}
