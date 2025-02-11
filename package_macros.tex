@@ -8,6 +8,7 @@
 \usepackage{pdflscape}
 \usepackage{url}
 
+\usepackage{wrapfig}
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{amsfonts}
@@ -18,7 +19,7 @@
 \newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
 
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
-\usepackage[colorlinks=true,hyperfootnotes=false]{hyperref}
+\usepackage[colorlinks=true,hyperfootnotes=false,citecolor=blue]{hyperref}
 \usepackage[capitalise]{cleveref}
 \usepackage{siunitx}
 \usepackage{todonotes}
@@ -35,16 +36,20 @@
 
 \newcommand*{\cventry}[7][.25em]{}
 \newcommand*{\cvitem}[3][.25em]{}
-\renewcommand*{\refname}{\subsection*{Publications}}
 
 \ganttset{group/.append style={orange},
 milestone/.append style={red},
 progress label node anchor/.append style={text=red}}
 
 \usepackage{multicol}
-\usepackage{hyperref}
 \usepackage{titlesec}
 
 \titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
 \titlespacing*{\section}{0pt}{1ex}{1ex}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!20]
+\tikzstyle{arrow} = [thick,->,>=stealth]
 

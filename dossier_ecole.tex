@@ -10,13 +10,150 @@
 \maketitle
 
 \section{Résumé du Scientifique}
+%\begin{enumerate}
+%    \item \textbf{Le résumé du scientifique} (3 pages max.) mettant en avant les rubriques suivantes, en lien avec les critères d’évaluation :
+%    \begin{itemize}
+%        \item \textbf{Présentation} : positionnement, enjeux, objectifs, méthodes, liens avec la stratégie de l’École.
+%        \item \textbf{Impacts, retombées et ambitions} : publications, colloques, collaborations, contrat industriel, obtention de financement (ERC, ANR, …).
+%    \end{itemize}
+%\end{enumerate}
+
+
+Research in post-quantum cryptography (PQC) has been boosted since 
+\href{https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization/call-for-proposals}
+{the National Institute of Standards and Technology (NIST) initiated its PQC standardization project in 2016}. 
+The development of PQC schemes typically progresses through four stages:
 \begin{enumerate}
-    \item \textbf{Le résumé du scientifique} (3 pages max.) mettant en avant les rubriques suivantes, en lien avec les critères d’évaluation :
-    \begin{itemize}
-        \item \textbf{Présentation} : positionnement, enjeux, objectifs, méthodes, liens avec la stratégie de l’École.
-        \item \textbf{Impacts, retombées et ambitions} : publications, colloques, collaborations, contrat industriel, obtention de financement (ERC, ANR, …).
-    \end{itemize}
+\setlength{\itemsep}{0.1pt}
+\item \textbf{Mathematical Foundations}: Assessing the computational hardness of underlying mathematical problems;
+\item \textbf{Scheme Construction}: Designing cryptographic schemes by leveraging these mathematical problems to create secure trapdoors;
+\item \textbf{Algorithm and Prototype Development}: Developing algorithms and coding prototypes, leading to the release of specifications for standard algorithms;
+\item \textbf{Deployment and Adoption}: Implementing and widely disseminating the cryptographic schemes.
 \end{enumerate}
+While many schemes, such as Kyber and Dilithium, have reached stages three or four, 
+PQC research remains an active field. There are still numerous open problems and challenges, 
+particularly following \href{https://www.nist.gov/news-events/news/2023/07/nist-announces-additional-digital-signature-candidates-pqc-standardization}
+{NIST's announcement of new candidates for post-quantum signatures in 2023}. 
+Additionally, enhancing efficiency and strengthening implementations against side-channel attacks (SCAs) 
+are ongoing priorities. It is also essential to adapt PQC to current applications, including communication protocols, 
+hardware security modules (HSMs), and various scenarios such as the Internet of 
+Things (IoT) and vehicular communication.
+
+In this research project, I will delineate the challenges that PQC confronts 
+in terms of its security evaluation regarding its physical aspects. While presenting these challenges, 
+I will put forth a proposal outlining strategies to address the evaluation of security and measurement of 
+the countermeasures against side-channel attacks. 
+
+\subsection*{Security Analysis of Post-Quantum Schemes}\label{sec:an}\vspace{-0.1cm}
+
+Cryptosystems face vulnerabilities to SCA, wherein an adversary can deduce 
+confidential information from physical observations, such as timing,
+electromagnetic emanation, or power consumption, made during the execution of 
+sensitive computations. These attacks can be classified as passive, where the a
+dversary simply observes leaked information without interfering, or active, 
+where faults are intentionally injected to manipulate computations and extract 
+secrets. Both types pose serious threats and have been successfully employed 
+across various applications, often proving challenging to detect.
+
+Exploring SCA requires specialized equipment and training, as the 
+methodologies and countermeasures are highly dependent on the targeted 
+cryptosystem. While techniques exist to mitigate these attacks, many are 
+intrinsic to specific schemes and lack easy adaptability to others. Consequently, 
+securing each implementation demands a unique approach, necessitating 
+expertise in both cryptographic engineering and side-channel analysis. 
+Unfortunately, the pool of individuals capable of combining these
+essential skills remains limited to a select group of professionals.
+
+
+This research proposal aims to achieve \textbf{three key objectives}: first, to 
+evaluate side-channel attacks on digital signature schemes selected in the latest NIST 
+call, identifying potential vulnerabilities and attack vectors; second, to 
+design effective countermeasures that enhance the resilience of these schemes 
+against such threats; and third, to benchmark the proposed solutions, assessing 
+their efficiency, security, and practicality for real-world implementation.
+
+
+
+\begin{figure}
+\begin{center}
+%\resizebox{.5\textwidth}{!}{
+%\framebox{
+%    \begin{tikzpicture}[node distance=2cm]
+
+        % Nodes
+%        \node (start) [startstop] {Research Start};
+%        \node (evaluate) [process, below of=start] {Evaluate Side-Channel Attacks (Identify Vulnerabilities)};
+%        \node (design) [process, below of=evaluate] {Design Countermeasures (Masking, Blinding, Fault Detection)};
+%        \node (benchmark) [process, below of=design] {Benchmark \& Validation (Security, Performance Trade-offs)};
+%        \node (end) [startstop, below of=benchmark] {Conclusions \& Future Work};
+
+        % Arrows
+%        \draw [arrow] (start) -- (evaluate);
+%        \draw [arrow] (evaluate) -- (design);
+%        \draw [arrow] (design) -- (benchmark);
+%        \draw [arrow] (benchmark) -- (end);
+
+%    \end{tikzpicture}
+%    }
+\includegraphics[scale=0.4]{cycle.png}
+\caption{Overview of the methdology for the project.}
+\end{center}
+
+
+\end{figure}
+
+
+
+%Fortunately, I have honed these skills throughout my career as a researcher and developed hardware 
+%proficiency during my tenure at Qualcomm, a leading semiconductor design company. Additionally, I 
+%possess knowledge of emerging threats to cryptography, including security analyses leveraging 
+%quantum algorithms. Even with NIST moving to 
+%\href{https://csrc.nist.gov/Projects/post-quantum-cryptography/round-4-submissions}{Round 4},
+%\footnote{\url{https://groups.google.com/a/list.nist.gov/g/pqc-forum/c/fvnhyQ25jUg/m/NJzYDqQBBAAJ}} current 
+%submissions are still open to scrutiny, and may be subject to theoretical attacks (where one can break the entire 
+%scheme) and side-channel attacks. The whole scientific community can propose attacks and/or improvements for 
+%the submissions, to make the schemes more robust. I am therefore particularly interested in doing this.  
+%Specifically, I am currently working on \textbf{evaluating security against side-channel attacks} and 
+%\textbf{studying quantum algorithms}, to harden PQC algorithms.
+
+\subsubsection*{Evaluating side-channel attacks}
+
+SCA evaluation encompasses two critical components: attack design and countermeasure design. I am deeply involved in advancing both facets of this process. My primary emphasis is on identifying vulnerabilities within PQC implementations and formulating countermeasures that can seamlessly integrate at the compilation (assembly language) level. 
+This strategic approach not only fortifies the code securely but also upholds the integrity of the algorithm, ensuring a secure and resilient implementation.
+
+Furthermore, I am exploring on an ongoing project the possibility of developing specialized hardware designed to be side-channel secure. For instance, this may involve creating a coprocessor that addresses the entire cryptographic scheme or designing a coprocessor tailored for specific functions, enhancing both the security and speed of the cryptographic system.
+
+As previously mentioned, NIST introduced a new call for cryptographic signature proposals. It is typical for these new implementations to lack side-channel protection. To attack them, my approach involves initiating timing attacks on these implementations. Additionally, I am exploring fault attacks, another type of side-channel attack that exploits specific hardware to introduce faults in the code. I have addressed this concern in a specific cryptographic scheme in a published paper~\cite{BanegasKLMPRST23}. While the project provides a theoretical overview of fault attacks, the practical application requires specific hardware. Presently, there is a lack of such equipment at INRIA Saclay. However, we can fix this issue with two options; we can acquire the equipment or we can collaborate with other centers. For example, I maintain close contact with groups possessing this hardware, particularly at Fraunhofer AISEC Institut (Germany) and Masaryk University (Czech Republic).
+
+In the \textbf{immediate and primary phase (short term)}, we can leverage the most recent \href{https://csrc.nist.gov/Projects/pqc-dig-sig/round-1-additional-signatures}{NIST call} to identify optimal candidates. By assessing metrics such as the ratio of public key to signature size, we aim to pinpoint the most efficient options, prioritizing those with smaller ratios. Additionally, our selection criteria will prioritize cryptographic schemes that have withstood potential vulnerabilities or attacks. Once this initial selection is made, our subsequent focus will shift towards initiating a comprehensive security evaluation process.
+
+\paragraph{Side-channel attacks for post-quantum cryptosystems.}\label{sec:attack}
+
+Addressing the threat landscape of side-channel attacks, timing attacks pose a significant risk, exploiting the temporal variations in certain operations to uncover sensitive data, including secret keys. What makes them particularly formidable is their accessibility to attackers without the need for specialized hardware, as demonstrated in remote scenarios~\cite{brumley2005remote}. Both hardware and software implementations of cryptosystems may fall prey to these insidious attacks.
+
+Another potent class of SCA is Differential Power Analysis~\cite{KocherJJR11} (DPA), recognized for its effectiveness and now considered an indispensable tool for attackers. I have employed DPA to successfully breach a protected version of Kyber~\cite{BockBBCPS23}.
+
+Crafting such attacks demands proficiency not only in software but also in hardware, a dual expertise I possess. However, the challenge arises when extending these skills to other cryptographic schemes, necessitating collaborations for a broader understanding. Within the GRACE team, we cover a spectrum of knowledge encompassing pre-quantum schemes and post-quantum schemes such as lattice-based, code-based, and isogeny-based schemes. Additionally, the COSMIC team contributes to a different type of expertise, that is, the knowledge of symmetric cryptography.
+
+As a \textbf{mid-term objective}, we aim to cultivate a profound understanding of the post-quantum signature schemes, meticulously scrutinizing potential leakages encompassing both temporal and power-related vulnerabilities. Furthermore, the emergence of a novel class known as ``MPC-in-the-head'' provides a unique opportunity to delve deeper into this concept. This exploration not only entails comprehending the intricacies of MPC-in-the-head but also involves devising innovative strategies for potential attacks. The overarching goal of these efforts is to fortify the security of implementations, a perspective that will be explored in greater detail in the following section.
+
+\paragraph{Side-channel protection for post-quantum cryptosystems.}\label{sec:ct}
+
+Transitioning from the previous section, we now explore countermeasures against such side-channel attacks. Initially, a crucial step involves implementing cryptosystems to operate in a "constant-time" manner. It is important to note that constant time does not imply determinism or a fixed number of algorithmic steps. Instead, it ensures that the algorithm does not inadvertently disclose any secret data through timing variations across different inputs. This becomes a challenging endeavor, requiring not only a deep comprehension of the scheme and its functions but also the coding expertise to implement it effectively.
+
+Addressing another layer of complexity involves mitigating the countermeasure's impact on speed, code size, or hardware requirements. As part of my \textbf{mid-term goals} and in response to the NIST call for signatures, my ongoing efforts aim to propose efficient countermeasures against these attacks. This represents a vital step in advancing implementation security while maintaining a balance with practical considerations like speed and resource requirements. Fortunately, my background accelerates the comprehension of this process.
+
+
+
+
+
+Producing new knowledge in this domain aligns with the objectives of the new cybersecurity 
+master's program at École Polytechnique de Paris, which aims to equip students with advanced 
+expertise in cryptographic security, hardware security, and side-channel analysis. By fostering 
+research and innovation in these critical areas, the program contributes to the development of 
+next-generation security professionals capable of addressing emerging threats in cryptography 
+and beyond.
+
 
 \begin{landscape}
 \section{Calendrier}
@@ -38,14 +175,15 @@
     \item The candidate's CV (maximum 3 pages).
 \end{enumerate}
 
-\subsection*{Work Experience}
+\subsection*{CV}
 \medskip
 
 \input{cv.tex}
 
+\newpage
 %\nocite{*}
-%\bibliographystyle{plainyr-rev} 
-%\bibliography{publications}   
+\bibliographystyle{plain} 
+\bibliography{research}   
 
 \end{document}
 
