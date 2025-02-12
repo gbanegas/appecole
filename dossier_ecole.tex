@@ -19,16 +19,27 @@
 %\end{enumerate}
 
 
-Research in post-quantum cryptography (PQC) has been boosted since 
+Research in post-quantum cryptography (PQC) has intensified 
+significantly since 
 \href{https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization/call-for-proposals}
-{the National Institute of Standards and Technology (NIST) initiated its PQC standardization project in 2016}. 
-The development of PQC schemes minimally progresses through four stages:
+{the launch of the National Institute of Standards and Technology (NIST) PQC standardization project in 2016}. 
+The development lifecycle of cryptographic schemes can be 
+categorized into four key phases:
+
 \begin{enumerate}
 \setlength{\itemsep}{0.1pt}
-\item \textbf{Mathematical Foundations}: Assessing the computational hardness of underlying mathematical problems;
-\item \textbf{Scheme Construction}: Designing cryptographic schemes by leveraging these mathematical problems to create secure trapdoors;
-\item \textbf{Algorithm and Prototype Development}: Developing algorithms and coding prototypes, leading to the release of specifications for standard algorithms;
-\item \textbf{Deployment and Adoption}: Implementing and widely disseminating the cryptographic schemes.
+\item \textbf{Mathematical Foundations}: Establishing the computational 
+hardness of underlying mathematical problems through rigorous 
+theoretical analysis;
+\item \textbf{Scheme Construction}: Designing cryptographic primitives 
+that utilize these mathematical foundations to create secure trapdoors 
+functions;
+\item \textbf{Algorithm Specification \& Prototyping}: Developing formal 
+algorithm descriptions and reference implementations, culminating in 
+standardized specifications;
+\item \textbf{Deployment \& Integration}: Implementing production-ready 
+solutions and fostering ecosystem adoption through standardization 
+efforts.
 \end{enumerate}
 While many schemes, such as Kyber and Dilithium, have reached stages three or four, 
 PQC research remains an active field. There are still numerous open problems and challenges, 
@@ -49,10 +60,11 @@ the countermeasures against side-channel attacks.
 Cryptosystems face vulnerabilities to SCA, wherein an adversary can deduce 
 confidential information from physical observations, such as timing,
 electromagnetic emanation, or power consumption, made during the execution of 
-sensitive computations. These attacks can be classified as passive, where the a
+computations using sensitive data~\cite{brumley2005remote, 10.1007/3-540-48405-1_25}.
+These attacks can be classified as passive, where the a
 dversary simply observes leaked information without interfering, or active, 
 where faults are intentionally injected to manipulate computations and extract 
-secrets. Both types pose serious threats and have been successfully employed 
+secrets~\cite{4599557,6076462}. Both types pose serious threats and have been successfully employed 
 across various applications, often proving challenging to detect.
 
 Exploring SCA requires specialized equipment and training, as the 
@@ -64,21 +76,11 @@ expertise in both cryptographic engineering and side-channel analysis.
 Unfortunately, the pool of individuals capable of combining these
 essential skills remains limited to a select group of professionals.
 
+\subsubsection*{Methodology}
 
-
-Producing new knowledge in this domain aligns with the objectives of the new cybersecurity 
-master's program at \emph{École Polytechnique de Paris}, which aims to equip students with advanced 
-expertise in cryptographic security, hardware security, and side-channel analysis. By fostering 
-research and innovation in these critical areas, the program contributes to the development of 
-next-generation security professionals capable of addressing emerging threats in cryptography 
-and beyond.
-
-This proposal establishes a comprehensive security evaluation framework for 
-post-quantum digital signature schemes under consideration in the
-NIST ongoing standardization process. 
-The study focuses specifically on side-channel attack resilience, 
-addressing critical gaps in practical security assessment through three 
-synergistic objectives.
+The proposed methodology comprises three 
+interdependent phases designed to bridge gaps 
+in hardware security and achieve practical implementation robustness:
 
 
 \begin{enumerate}[leftmargin=*, label=\textbf{\arabic*.}, series=main]
@@ -97,8 +99,8 @@ synergistic objectives.
     \begin{itemize}[leftmargin=2em]
         \item Algorithm-aware protection strategies:
         \begin{itemize}
-            \item Dynamic masking
-            \item Fault tolerant operations
+            \item Masking: Implementing runtime techniques to obscure sensitive data and operations without compromising efficie;
+            \item Fault tolerant operations: : Designing systems capable of maintaining functionality and security in the presence of induced faults.
         \end{itemize}
     \end{itemize}
     
@@ -113,30 +115,35 @@ synergistic objectives.
         Side-channel resistance & Test Vector Leakage Assessment (TVLA) with $t > 4.5$ threshold \\
          \midrule
         Computational overhead & Cycle count analysis vs. baseline specifications \\
-         \midrule
-        Energy efficiency & Per-signature measurements (mJ/operation) \\
         \bottomrule
     \end{tabularx}
     \end{center}
 \end{enumerate}
 
-\section*{Methodological Approach}
-The proposed framework employs a three-phase iterative process:~\\
-(1) \textit{Attack surface enumeration} consists into the indentification of targets, identification of possible 
-side-channel weakness, and evaluation of the targets on the Husky, and CW-lite boards. 
-\textit{Countermeasure prototyping} will be done by tailoring an algorithmic countermeasure to the 
+More specifically, The methodology comprises the following steps:
+(1) \textit{Attack surface enumeration} involves identifying targets, assessing potential 
+side-channel vulnerabilities, and evaluating these targets 
+using Husky and CW-Lite boards.
+(2) \textit{Countermeasure prototyping} will be done by tailoring an algorithmic countermeasure to the 
 attack and then it will be implemented in a software and hardware. 
-\textit{Validation} will be done in software countermeasure implemented in Cortex-M3 and M4, 
-hardware countermeasure implemented in FPGA and testing on Polarfire and Xilinx platforms.
+(3) \textit{Validation} will involve implementing the software countermeasure on 
+Cortex-M3 and M4 processors, and the hardware countermeasure on FPGAs, 
+followed by testing on PolarFire and Xilinx platforms.
 
-
-To achieve the goals we will require the acquisition of certain materials presented in 
-Table~\ref{tab:hardware_components}. Moreover, I plan to to hire a PhD student to 
-develop the framwork of side-channel analysis and development of 
-cryptography hardware security.
-
+To achieve our objectives, we will need to acquire the materials 
+listed in Table~\ref{tab:hardware_components}. Additionally, I 
+plan to hire a PhD student to develop a framework for side-channel 
+analysis and cryptographic hardware security.
 
 \subsection*{Impacts, Outcomes, and Ambitions}
+
+\paragraph{Impacts on \'Ecole Polytechnique de Paris.} 
+Producing new knowledge in the hardware security domain aligns with the objectives of the cybersecurity 
+program at \emph{École Polytechnique de Paris}, which aims to equip students with advanced 
+expertise in cryptographic security, hardware security, and side-channel analysis. By fostering 
+research and innovation in these critical areas, the program contributes to the development of 
+next-generation security professionals capable of addressing emerging threats in cryptography 
+and beyond.
 
 The results of this research will contribute to the broader scientific community by:
 
@@ -210,7 +217,7 @@ cybersecurity-focused industrial partnerships.
 
 
 
-\paragraph{Budget}
+\paragraph{Budget.}
 
 Table \ref{tab:hardware_components} details the essential 
 equipment required for comprehensive security evaluation of 
@@ -228,18 +235,28 @@ selection addresses three critical operational needs:
 \begin{tabular}{|l|p{8cm}|c|c|l|}
 \toprule
 \textbf{Hardware} & \textbf{Usage} & \textbf{Qty} & \textbf{Total Price (€)} & \textbf{Link} \\ \midrule
-Husk Board & Side-channel acquisition / fault attack & 2 & 1060 & \href{https://www.mouser.fr/ProductDetail/NewAE/NAE-CWHUSKY-SK1?qs=rQFj71Wb1eUq6zUbSt2x8g\%3D\%3D}{Mouser} \\ \hline
-Server & Run analysis and store the data acquired by the boards. & 1 & & \\ \midrule
+Husk Board & Side-channel acquisition / fault attack & 2 & 1,060 & \href{https://www.mouser.fr/ProductDetail/NewAE/NAE-CWHUSKY-SK1?qs=rQFj71Wb1eUq6zUbSt2x8g\%3D\%3D}{Mouser} \\ \hline
+Server & Run analysis and store the data acquired by the boards. & 1 & 3,100 & \\ \midrule
 Polarfire FPGA & Development of specific hardware for cryptography & 1 & 150 & \href{https://www.microchip.com/en-us/development-tool/mpfs-disco-kit}{Microchip} \\ \midrule
 Arty S7: Spartan-7 FPGA & Development of specific hardware for cryptography & 1 & 300 & \href{https://digilent.com/shop/arty-s7-spartan-7-fpga-development-board/}{Digilent} \\ \midrule
 CW-lite ARM & Small ARM board for side-channel attacks & 2 & 700 & \href{https://www.newae.com/products/nae-cwlite-arm}{NewAE} \\ \midrule
 Nucleo ARM & Board with Cortex-M3/M4 & 4 & 400 & \\ \midrule
 PicoScope 3000E & Oscilloscope & 1 & 4,225 & \href{https://www.picotech.com/oscilloscope/picoscope-3000e-series-500-mhz-5gs-digital-usb-oscilloscope?model=3418E}{PicoTech} \\ \midrule
 Wires / Cables / Others & Connection with oscilloscope, soldering kit, etc. & 1 & 700 & \\ \bottomrule
+$--$ & $--$ & $--$ & 10,635  & $--$ \\
+\bottomrule
 \end{tabular}%
 }
 \end{table}
 
+The PhD student position is planned for a duration of three years, with a total 
+salary of €75,000. Additionally, we have allocated 
+€4,000 per year for the student to attend international 
+conferences such as Eurocrypt and CHES, as well as summer schools. 
+This brings the total estimated cost to €87,000.
+
+Therefore, the total estimated cost for the PhD student is €87,000, 
+and the overall project cost, including equipment, is €97,635.
 
 \begin{landscape}
 \section{Calendrier}
