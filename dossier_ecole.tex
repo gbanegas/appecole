@@ -84,7 +84,8 @@ synergistic objectives.
 \begin{enumerate}[leftmargin=*, label=\textbf{\arabic*.}, series=main]
     \item \textbf{Systematic Vulnerability Analysis}
     \begin{itemize}[leftmargin=2em]
-        \item Investigation targets: NIST PQC candidates
+        \item Investigation targets: NIST PQC candidates (\href{https://csrc.nist.gov/projects/post-quantum-cryptography/round-4-submissions}{Round 4}, \href{https://csrc.nist.gov/projects/pqc-dig-sig/round-2-additional-signatures}{Additional Call}), 
+        \href{https://www.kpqc.or.kr/competition.html}{Korean PQC}, and \href{https://niccs.org.cn/en/notice/}{China PQC}.
         \item Attack methodologies:
         \begin{itemize}
             \item \textit{Passive}: Time analysis, and Differential power analysis (DPA)
@@ -96,8 +97,8 @@ synergistic objectives.
     \begin{itemize}[leftmargin=2em]
         \item Algorithm-aware protection strategies:
         \begin{itemize}
-            \item Dynamic masking for lattice-based schemes
-            \item Error-canceling blinding for FFT-dependent operations
+            \item Dynamic masking
+            \item Fault tolerant operations
         \end{itemize}
     \end{itemize}
     
@@ -111,30 +112,29 @@ synergistic objectives.
         \midrule
         Side-channel resistance & Test Vector Leakage Assessment (TVLA) with $t > 4.5$ threshold \\
          \midrule
-        Computational overhead & Cycle count analysis vs. NIST baseline specifications \\
+        Computational overhead & Cycle count analysis vs. baseline specifications \\
          \midrule
         Energy efficiency & Per-signature measurements (mJ/operation) \\
-         \midrule
-        Standardization readiness & FIPS 140-3 compliance mapping \\
         \bottomrule
     \end{tabularx}
     \end{center}
 \end{enumerate}
 
 \section*{Methodological Approach}
-The proposed framework employs a three-phase iterative process:
-\begin{enumerate}
-    \item \textit{Attack surface enumeration}: Formal verification of cryptographic primitives using ProVerif
-    \item \textit{Countermeasure prototyping}: RTL implementation in SystemVerilog
-    \item \textit{Validation}: ASIC/FPGA testing on Xilinx UltraScale+ platforms
-\end{enumerate}
+The proposed framework employs a three-phase iterative process:~\\
+(1) \textit{Attack surface enumeration} consists into the indentification of targets, identification of possible 
+side-channel weakness, and evaluation of the targets on the Husky, and CW-lite boards. 
+\textit{Countermeasure prototyping} will be done by tailoring an algorithmic countermeasure to the 
+attack and then it will be implemented in a software and hardware. 
+\textit{Validation} will be done in software countermeasure implemented in Cortex-M3 and M4, 
+hardware countermeasure implemented in FPGA and testing on Polarfire and Xilinx platforms.
 
 
 To achieve the goals we will require the acquisition of certain materials presented in 
-Table~\ref{tab:hardware_components}. Moreover, I plan to to hire a PhD student to study 
-hardware security. 
+Table~\ref{tab:hardware_components}. Moreover, I plan to to hire a PhD student to 
+develop the framwork of side-channel analysis and development of 
+cryptography hardware security.
 
-The methodology that we will follow can be seen in Figure~\ref{fig:methodology}
 
 \subsection*{Impacts, Outcomes, and Ambitions}
 
@@ -211,6 +211,14 @@ cybersecurity-focused industrial partnerships.
 
 
 \paragraph{Budget}
+
+Table \ref{tab:hardware_components} details the essential 
+equipment required for comprehensive security evaluation of 
+post-quantum cryptographic implementations. The hardware 
+selection addresses three critical operational needs: 
+(1) precise side-channel measurement capabilities, (2)
+ target device programmability for various cryptographic schemes, 
+ and (3) high-speed signal acquisition infrastructure.
 
 \begin{table}
 \centering
