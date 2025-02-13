@@ -4,8 +4,10 @@
 
 \begin{document}
 
-\title{APP}
-\author{Gustavo Banegas}
+\title{Launching Packages 2025~\\Protecting Hardware Impletations}
+\author{Gustavo Banegas~\\
+ Inria \& LIX, École Polytechnique de Paris~\\
+ gustavo.souza-banegas@polytechnique.edu}
 \date{}
 \maketitle
 
@@ -18,42 +20,39 @@
 %    \end{itemize}
 %\end{enumerate}
 
-
-Research in post-quantum cryptography (PQC) has intensified 
-significantly since 
+Once a quantum computer capable of running Shor’s algorithm~\cite{365700} is built, 
+currently deployed public-key cryptography \textbf{will be catastrophically 
+and irreversibly broken}, rendering all past and future encrypted communications completely exposed.
+In response, there is a global effort to develop cryptographic systems resistant to 
+quantum attacks, known as Post-Quantum Cryptography (PQC). Research in PQC has 
+intensified, particularly following 
 \href{https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization/call-for-proposals}
-{the launch of the National Institute of Standards and Technology (NIST) PQC standardization project in 2016}. 
-The development lifecycle of cryptographic schemes can be 
-categorized into four key phases:
+{the launch of the National Institute of Standards and Technology (NIST) PQC 
+standardization project in 2016}. 
 
-\begin{enumerate}
-\setlength{\itemsep}{0.1pt}
-\item \textbf{Mathematical Foundations}: Establishing the computational 
-hardness of underlying mathematical problems through rigorous 
-theoretical analysis;
-\item \textbf{Scheme Construction}: Designing cryptographic primitives 
-that utilize these mathematical foundations to create secure trapdoors 
-functions;
-\item \textbf{Algorithm Specification \& Prototyping}: Developing formal 
-algorithm descriptions and reference implementations, culminating in 
-standardized specifications;
-\item \textbf{Deployment \& Integration}: Implementing production-ready 
-solutions and fostering ecosystem adoption through standardization 
-efforts.
-\end{enumerate}
-While many schemes, such as Kyber and Dilithium, have reached stages three or four, 
-PQC research remains an active field. There are still numerous open problems and challenges, 
-particularly following \href{https://www.nist.gov/news-events/news/2023/07/nist-announces-additional-digital-signature-candidates-pqc-standardization}
-{NIST's announcement of new candidates for post-quantum signatures in 2023}. 
-Additionally, enhancing efficiency and strengthening implementations against side-channel attacks (SCA) 
-are ongoing priorities. It is also essential to adapt PQC to current applications, including communication protocols, 
-hardware security modules (HSM), and various scenarios such as the Internet of 
-Things (IoT) and vehicular communication.
+The development of cryptographic schemes follows a structured process: (1) It begins with the establishment of computational hardness assumptions through 
+mathematical analysis, providing the theoretical foundation for security.
+(2) These foundations enable the design of cryptographic primitives that leverage secure trapdoor functions, 
+forming the basis of new encryption and signature schemes.
+(3) Once the theoretical groundwork is laid, algorithms are formally specified and prototyped, leading to 
+reference implementations. 
+(4) The final stage involves integrating these solutions into real-world applications, ensuring their adoption 
+through production-ready implementations.
 
-In this research project, I will delineate the challenges that PQC confronts 
-in terms of its security evaluation regarding its physical aspects. While presenting these challenges, 
-I will put forth a proposal outlining strategies to address the evaluation of security and measurement of 
-the countermeasures against side-channel attacks. 
+While schemes like Kyber and Dilithium have reached advanced stages, post-quantum cryptography 
+remains an active research area with \emph{critical challenges}. Following \href{https://www.nist.gov/news-events/news/2023/07/nist-announces-additional-digital-signature-candidates-pqc-standardization}
+{NIST's 2023 announcement of additional digital signature candidates}, 
+improving efficiency and \textbf{hardening implementations against 
+side-channel attacks (SCA)} have become \textbf{crucial}. As cryptographic schemes transition from 
+theory to practice, their security in real-world deployments depends not only on their mathematical 
+foundations but also on their resilience to physical attacks. Strengthening implementations against 
+SCA is mandatory to preventing adversaries from extracting secret information through power analysis, 
+electromagnetic leakage, or fault injection. This aspect of PQC is essential for secure adoption in 
+applications such as hardware security modules, IoT devices, and vehicular communication—where 
+attackers have physical access and SCA defenses are not optional but necessary. 
+
+The goal of this project is to ensure cryptographic security beyond mathematical 
+guarantees by evaluating and strengthening its resistance to physical attacks.
 
 \subsection*{Security Analysis of Post-Quantum Schemes}\label{sec:an}\vspace{-0.1cm}
 
@@ -137,7 +136,7 @@ listed in Table~\ref{tab:hardware_components}. Additionally, I
 plan to hire a PhD student to develop a framework for side-channel 
 analysis and cryptographic hardware security.
 
-\subsection*{Impacts, Outcomes, and Ambitions}
+\subsection*{Impacts and Outcomes}
 
 \paragraph{Impacts on \'Ecole Polytechnique de Paris.} 
 Producing new knowledge in the hardware security domain aligns with the objectives of the cybersecurity 
@@ -146,23 +145,6 @@ expertise in cryptographic security, hardware security, and side-channel analysi
 research and innovation in these critical areas, the program contributes to the development of 
 next-generation security professionals capable of addressing emerging threats in cryptography 
 and beyond.
-
-\paragraph{Publications and scientific outcome.} Targeting top-tier cryptography and security conferences and journals such as 
-\href{https://ches.iacr.org/index.php}{CHES}, \href{https://eurocrypt.iacr.org/}{EUROCRYPT}, 
-\href{https://asiacrypt.iacr.org/}{ASIACRYPT}, 
-\href{https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10206}{IEEE Transactions on Information Forensics and Security}, 
-and the \href{https://link.springer.com/journal/13389}{Journal of Cryptographic Engineering}. Moreover, other satellite 
-conferences, such as \href{https://cascade-conference.org/cfp.html}{CASCADE}, also 
-focus on related topics.
-
-\paragraph{Conferences \& Collaborations.} Engaging in academic collaborations with international 
-early-career researchers, including \href{https://mtrimoska.com/}{Monika Trimoska} (TU/e, Netherlands) and 
-\href{https://www.sopmac.de/index.html}{Fábio Campos}(H-BRS, Germany), as well as continuing partnerships 
-with other international researchers like \href{https://research.aalto.fi/en/persons/chris-brzuska}{Chris Brzuska} (Aalto, Finland) 
-and Łukasz Chmielewski (Masaryk University, Czech Republic). Additionally, initiating a project with local researcher Guénaël Renault. 
-Participation in research workshops and summer schools, such as the 
-\href{https://summerschool-croatia.cs.ru.nl/}{Summer School on Real-World Cryptography and Privacy}, 
-is also planned.
 
 \paragraph{Industrial Impact.} Establishing connections with industry, 
 particularly in embedded security and hardware-based cryptographic 
@@ -174,6 +156,23 @@ Belaïd from \href{https://www.cryptoexperts.com/people/}{CryptoExperts},
 as well as Christine Cloostermans at 
 \href{https://www.nxp.com/company/about-nxp/smarter-world-blog/BL-EMBRACING-EQUITY-ON-EVERY-LEVEL}{NXP}, 
 facilitating real-world feedback and further industrial partnerships.
+
+\paragraph{Publications and scientific outcome.} Targeting top-tier cryptography and security conferences and journals such as 
+\href{https://ches.iacr.org/index.php}{CHES}, \href{https://eurocrypt.iacr.org/}{EUROCRYPT}, 
+\href{https://asiacrypt.iacr.org/}{ASIACRYPT}, 
+\href{https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10206}{IEEE Transactions on Information Forensics and Security}, 
+and the \href{https://link.springer.com/journal/13389}{Journal of Cryptographic Engineering}. Moreover, other satellite 
+conferences, such as \href{https://cascade-conference.org/cfp.html}{CASCADE}, also 
+focus on related topics.
+
+\paragraph{Scientific Collaborations.} Engaging in academic collaborations with international 
+early-career researchers, including \href{https://mtrimoska.com/}{Monika Trimoska} (TU/e, Netherlands) and 
+\href{https://www.sopmac.de/index.html}{Fábio Campos}(H-BRS, Germany), as well as continuing partnerships 
+with other international researchers like \href{https://research.aalto.fi/en/persons/chris-brzuska}{Chris Brzuska} (Aalto, Finland) 
+and Łukasz Chmielewski (Masaryk University, Czech Republic). Additionally, initiating a project with local researcher Guénaël Renault. 
+Participation in research workshops and summer schools, such as the 
+\href{https://summerschool-croatia.cs.ru.nl/}{Summer School on Real-World Cryptography and Privacy}, 
+is also planned.
 
 \paragraph{Funding Prospects.} The plan is to establish this project, 
 set up the necessary equipment, consolidate the results, 
@@ -260,14 +259,23 @@ $--$ & $--$ & $--$ & 10,635  & $--$ \\
 }
 \end{table}
 
-The PhD student position is planned for a duration of three years, with a total 
+The \emph{PhD student position} is planned for a duration of three years, with a total 
 salary of €75,000. Additionally, we have allocated 
 €4,000 per year for the student to attend international 
 conferences such as Eurocrypt and CHES, as well as summer schools. 
 This brings the total estimated cost to €87,000.
 
-Therefore, the total estimated cost for the PhD student is €87,000, 
-and the overall project cost, including equipment, is €97,635. FIXME: correct values
+Regarding internship opportunities, we can host master's 
+students for six-month projects. The main goal is to familiarize them 
+with side-channel attacks through smaller projects, such as data 
+acquisition and analysis or the implementation of countermeasures for 
+cryptographic schemes. For such, X will be destinated 
+to pay for the internship.
+
+
+Therefore, the total estimated cost for the PhD student is €87,000,
+the costs for internship is estimated in X, 
+and the overall project cost, including equipment, is €97,635 + X. FIXME
 \newpage
 \begin{landscape}
 \vspace{-2cm}
