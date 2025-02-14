@@ -15,11 +15,12 @@
      inline]{1}{36}
     %labels
     %\gantttitle{A three-years project}{36}\\  % title 1
-    \gantttitle[]{2025}{12}                 % title 2
+    \gantttitle[]{2025}{6}                 % title 2
     \gantttitle[]{2026}{12} 
-    \gantttitle[]{2027}{12}\\              
-    \gantttitle{Q1}{3}                      % title 3
-    \gantttitle{Q2}{3}
+    \gantttitle[]{2027}{12}
+    \gantttitle[]{2028}{6}\\              
+ %   \gantttitle{Q1}{3}                      % title 3
+ %   \gantttitle{Q2}{3}
     \gantttitle{Q3}{3}
     \gantttitle{Q4}{3}
     \gantttitle{Q1}{3}
@@ -29,28 +30,31 @@
     \gantttitle{Q1}{3}
     \gantttitle{Q2}{3}
     \gantttitle{Q3}{3} 
-    \gantttitle{Q4}{3}\\
+    \gantttitle{Q4}{3}
+    \gantttitle{Q1}{3}                      % title 3
+    \gantttitle{Q2}{3}    \\
     % Setting group if any
    % \ganttgroup[inline=false]{Group 1}{1}{5}\\ 
-    \ganttbar[inline=false]{Acquiring equipment}{1}{3}\\
     \ganttbar[inline=false]{Selection of candidates}{1}{4}\\
-    \ganttbar[inline=false]{Evaluation of candidates}{3}{8}\\
-    \ganttbar[inline=false]{Development of attacks}{6}{10}\\
-    \ganttbar[inline=false]{Writing of the attack}{10}{11}\\
+    \ganttbar[inline=false]{Acquiring equipment}{3}{5}\\
+    \ganttbar[inline=false]{Evaluation of candidates}{5}{10}\\
+    \ganttbar[inline=false]{Development of attacks}{6}{12}\\
+    \ganttbar[inline=false, bar/.append style={fill=teal}]{Intership Master M2}{5}{11}\\
+    %\ganttbar[inline=false]{Writing of the attack}{10}{11}\\
     \ganttmilestone[inline=false]{1st Publication (Journal)}{13} \\
-
-    \ganttbar[inline=false]{Development of the countermeasure}{11}{14}\\
-    \ganttbar[inline=false]{Implementation of the countermeasure}{12}{14}\\
-    \ganttbar[inline=false]{Evaluation of the countermeasure}{12}{16}\\
-    \ganttbar[inline=false]{Scentific write of the framework}{15}{18}\\
-    \ganttmilestone[inline=false]{2nd publication (CHES)}{19} \\
-    \ganttbar[inline=false]{Evaluation of hardware design }{16}{20}\\
-    \ganttbar[inline=false]{Prototype of secure hardware}{17}{21}\\
-    \ganttbar[inline=false]{Evaluation of secure techniques}{21}{25}\\
-    \ganttbar[inline=false]{Thesis writing}{25}{30}\\
-    \ganttbar[inline=false]{Paper writing}{28}{32}\\
-    \ganttmilestone[inline=false]{3nd publication (CHES/Eurocrypt)}{33} \\
-    \ganttbar[inline=false]{Preparatiof for the defense}{33}{36}\\
-    \ganttmilestone[inline=false]{PhD Thesis Defense}{36} \\ 
+    \ganttbar[inline=false, bar/.append style={fill=purple}]{Writing application for ERC}{9}{12} \\
+    \ganttmilestone[inline=false, milestone/.append style={fill=green}]{Deadline Submittion ERC 2026}{12} \\
+    \ganttbar[inline=false]{Development of the countermeasure}{11}{16}\\
+    \ganttbar[inline=false]{Implementation of the countermeasure}{13}{19}\\
+    \ganttbar[inline=false, bar/.append style={fill=teal}]{Intership Master M2}{13}{19}\\
+    \ganttbar[inline=false]{Evaluation of the countermeasure}{16}{19}\\
+    \ganttbar[inline=false]{Scentific write of the framework}{15}{22}\\
+    \ganttmilestone[inline=false]{2nd publication (CHES)}{20} \\
+    \ganttbar[inline=false]{Evaluation of hardware design }{20}{26}\\
+    \ganttbar[inline=false]{Prototype of secure hardware}{22}{32}\\
+    \ganttbar[inline=false]{Evaluation of secure techniques}{26}{34}\\
+    \ganttmilestone[inline=false]{3nd publication (CHES/Eurocrypt)}{35} \\
+    %\ganttbar[inline=false]{Preparatiof for the defense}{33}{36}\\
+    %\ganttmilestone[inline=false]{PhD Thesis Defense}{36} \\ 
 \end{ganttchart}
 \end{landscape}
