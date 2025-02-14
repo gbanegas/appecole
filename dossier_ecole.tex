@@ -67,13 +67,20 @@ secrets~\cite{4599557,6076462}. Both types pose serious threats and have been su
 across various applications, often proving challenging to detect.
 
 Exploring SCA requires specialized equipment and training, as the 
-methodologies and countermeasures are highly dependent on the targeted 
-cryptosystem. While techniques exist to mitigate these attacks, many are 
-intrinsic to specific schemes and lack easy adaptability to others. Consequently, 
-securing each implementation demands a unique approach, necessitating 
-expertise in both cryptographic engineering and side-channel analysis. 
-Unfortunately, the pool of individuals capable of combining these
-essential skills remains limited to a select group of professionals.
+methodologies and countermeasures are highly dependent on the 
+targeted cryptosystem. While techniques exist to mitigate these 
+attacks, many are intrinsic to specific schemes and lack easy 
+adaptability to others. Consequently, securing each implementation 
+demands a unique approach, necessitating expertise in both 
+cryptographic engineering and side-channel analysis. Unfortunately, 
+the pool of individuals capable of combining these essential skills 
+remains limited to a select group of professionals. Based on my 
+experience in security architecture within the industry, there is a 
+clear shortage of professionals with the necessary expertise in this 
+field. We aim to give a first step to develop the knowledge
+and foundation for training students in hardware security.
+
+
 
 \subsubsection*{Methodology}
 
@@ -81,81 +88,96 @@ The proposed methodology comprises three
 interdependent phases designed to bridge gaps 
 in hardware security and achieve practical implementation robustness:
 
-\begin{enumerate}[leftmargin=*, label=\textbf{\arabic*.}, series=main]
-    \item \textbf{Enumerate Attack Surfaces and Analyze Vulnerabilities}
-    \begin{itemize}[leftmargin=2em]
-        \item Investigate cryptographic targets: 
-        \begin{itemize}
-            \item USA NIST PQC candidates (\href{https://csrc.nist.gov/projects/post-quantum-cryptography/round-4-submissions}{Round 4}, \href{https://csrc.nist.gov/projects/pqc-dig-sig/round-2-additional-signatures}{Additional Call})
-            \item \href{https://www.kpqc.or.kr/competition.html}{Korean PQC}
-            \item \href{https://niccs.org.cn/en/notice/}{China PQC}
-        \end{itemize}
-        \item Assess vulnerabilities using Husky and CW-Lite boards;
-        \item Execute attack:
-        \begin{itemize}
-            \item \textit{Passive}: Perform time analysis and Differential Power Analysis (DPA)
-            \item \textit{Active}: Apply clock/voltage glitching
-        \end{itemize}
+
+\begin{enumerate} 
+\item \textbf{Enumerate Attack Surfaces and Analyze Vulnerabilities} 
+\begin{itemize}[leftmargin=2em] 
+\item Investigate cryptographic targets: 
+\begin{itemize} \item USA NIST PQC candidates 
+(\href{https://csrc.nist.gov/projects/post-quantum-cryptography/round-4-submissions}{Round 4}, 
+\href{https://csrc.nist.gov/projects/pqc-dig-sig/round-2-additional-signatures}{Additional Call}) 
+\item \href{https://www.kpqc.or.kr/competition.html}{Korean PQC} 
+\item \href{https://niccs.org.cn/en/notice/}{China PQC} 
+\end{itemize} 
+\item Assess vulnerabilities using Husky and CW-Lite boards; 
+\item Execute attack: 
+    \begin{itemize} 
+    \item \textit{Passive}: Perform time analysis and Differential Power Analysis (DPA) 
+    \item \textit{Active}: Apply clock/voltage glitching 
+    \end{itemize} 
+\end{itemize}
+
+\item \textbf{Prototype Adaptive Countermeasures}
+\begin{itemize}[leftmargin=2em]
+    \item Develop algorithm-aware protection strategies:
+    \begin{itemize}
+        \item Implement masking techniques to obscure sensitive data without efficiency loss
+        \item Design fault-tolerant operations to resist induced faults
     \end{itemize}
-    
-    \item \textbf{Prototype Adaptive Countermeasures}
-    \begin{itemize}[leftmargin=2em]
-        \item Develop algorithm-aware protection strategies:
-        \begin{itemize}
-            \item Implement masking techniques to obscure sensitive data without efficiency loss
-            \item Design fault-tolerant operations to resist induced faults
-        \end{itemize}
-        \item Deploy countermeasures across platforms:
-        \begin{itemize}
-            \item Integrate software protections on embedded systems (Cortex-M4/M3)
-            \item Implement hardware mitigations in FPGA architectures
-        \end{itemize}
+    \item Deploy countermeasures across platforms:
+    \begin{itemize}
+        \item Integrate software protections on embedded systems (Cortex-M4/M3)
+        \item Implement hardware mitigations in FPGA architectures
     \end{itemize}
-    
-    \item \textbf{Validate Implementations and Benchmark Security}
-    \begin{itemize}[leftmargin=2em]
-        \item Test software countermeasures on Cortex-M3/M4 processors
-        \item Verify hardware countermeasures using PolarFire and Xilinx FPGAs
-        \item Quantify security improvements:
+\end{itemize}
+
+\item \textbf{Validate Implementations and Benchmark Security}
+\begin{itemize}[leftmargin=2em]
+    \item Test software countermeasures on Cortex-M3/M4 processors
+    \item Verify hardware countermeasures using PolarFire and Xilinx FPGAs
+    \item Quantify security improvements:
+    \begin{itemize}
+        \item Measure side-channel resistance: Practical approach and Test Vector Leakage Assessment (TVLA)
+        \item Assess computational overhead: Cycle count analysis vs. baseline specifications
     \end{itemize}
-    
-    \begin{center}
-    \rowcolors{2}{gray!20}{white}
-    \resizebox{0.95\textwidth}{!}{%
-    \begin{tabular}{|l|c|}
-        \toprule
-        \rowcolor{gray!40}
-        \textbf{Metric} & \textbf{Evaluation Methodology} \\
-        \midrule
-        Measure side-channel resistance & \makecell{Practical approach and Test Vector Leakage Assessment (TVLA)} \\
-        \midrule
-        Assess computational overhead & Cycle count analysis vs. baseline specifications \\
-        \bottomrule
-    \end{tabular}
-    }
-    \end{center}
+\end{itemize}
 \end{enumerate}
 
-
+\textbf{Additional Notes:}
+\begin{itemize} \item The research fills a significant gap, 
+as LIX does not yet have expertise in hardware security. 
+\item Validation is crucial to ensure that the developed 
+countermeasures are both practical and effective. 
+\item The project will be strengthened by leveraging my 
+industrial experience and collaborations. 
+\item A PhD student will be hired to work on the 
+side-channel analysis and cryptographic hardware security 
+framework. 
+\end{itemize}
 
 
 \subsection*{Impacts and Outcomes}
+\paragraph{Impacts on 'Ecole Polytechnique de Paris (EPP).}
+This project introduces a new research topic in hardware security, 
+aligning with the objectives of the cybersecurity program at 
+EPP. The program aims to equip students with advanced expertise in 
+cryptographic security, hardware security, and side-channel analysis. 
+By fostering research and innovation in these critical areas, 
+it contributes to the development of next-generation security 
+professionals capable of addressing emerging threats in 
+cryptography and beyond. Given the strong demand for expertise 
+in this field, this initiative will play a crucial role in knowledge 
+dissemination, training, and academic collaborations. Moreover, the 
+project will be carried out within the new research team at 
+Bruyères-le-Châtel (CEA) and Gréneôble (IRISA), where early 
+support will help build momentum for further developments, 
+including lab projects and contributions to the Cybersecurity 
+Master's program.
 
-\paragraph{Impacts on \'Ecole Polytechnique de Paris.} 
-Producing new topic in the research of hardware security domain aligns with the objectives of the cybersecurity 
-program at \emph{École Polytechnique de Paris}, which aims to equip students with advanced 
-expertise in cryptographic security, hardware security, and side-channel analysis. By fostering 
-research and innovation in these critical areas, the program contributes to the development of 
-next-generation security professionals capable of addressing emerging threats in cryptography 
-and beyond.
-
-\paragraph{Industrial Impact.} Building on my industrial experience at 
-\href{https://www.qualcomm.com/}{Qualcomm}, this project seeks to develop the expertise necessary to 
-train professionals in evaluating physical threats to cryptography. Additionally, we will empower 
-specialists with the skills required to design and implement secure software and hardware solutions. 
-Through dynamic knowledge transfer between academia and industry, we will ensure that cutting-edge research 
-is effectively translated into practical security applications.
-
+\paragraph{Industrial Impact.}
+Building on my industrial experience at 
+\href{https://www.qualcomm.com/}{Qualcomm}, this project seeks to 
+address the evident shortage of professionals trained in evaluating 
+physical threats to cryptography. There is a strong demand in the 
+industry for specialists who can bridge the gap between theoretical 
+security and practical implementation, particularly in embedded 
+security and hardware-based cryptographic implementations. By 
+fostering collaborations with industry leaders, such as CryptoExperts 
+and professionals at NXP, we aim to develop expertise that translates 
+into real-world security solutions. Additionally, this initiative 
+will ensure that cutting-edge research is effectively transformed 
+into practical countermeasures through knowledge transfer, 
+training, and industrial partnerships.
 
 %Establishing connections with industry, 
 %particularly in embedded security and hardware-based cryptographic 
