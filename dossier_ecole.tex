@@ -81,81 +81,92 @@ The proposed methodology comprises three
 interdependent phases designed to bridge gaps 
 in hardware security and achieve practical implementation robustness:
 
-
 \begin{enumerate}[leftmargin=*, label=\textbf{\arabic*.}, series=main]
-    \item \textbf{Systematic Vulnerability Analysis}
+    \item \textbf{Enumerate Attack Surfaces and Analyze Vulnerabilities}
     \begin{itemize}[leftmargin=2em]
-        \item Investigation targets: NIST PQC candidates (\href{https://csrc.nist.gov/projects/post-quantum-cryptography/round-4-submissions}{Round 4}, \href{https://csrc.nist.gov/projects/pqc-dig-sig/round-2-additional-signatures}{Additional Call}), 
-        \href{https://www.kpqc.or.kr/competition.html}{Korean PQC}, and \href{https://niccs.org.cn/en/notice/}{China PQC}.
-        \item Attack methodologies:
+        \item Investigate cryptographic targets: 
         \begin{itemize}
-            \item \textit{Passive}: Time analysis, and Differential power analysis (DPA)
-            \item \textit{Active}: Clock and voltage glitching
+            \item USA NIST PQC candidates (\href{https://csrc.nist.gov/projects/post-quantum-cryptography/round-4-submissions}{Round 4}, \href{https://csrc.nist.gov/projects/pqc-dig-sig/round-2-additional-signatures}{Additional Call})
+            \item \href{https://www.kpqc.or.kr/competition.html}{Korean PQC}
+            \item \href{https://niccs.org.cn/en/notice/}{China PQC}
+        \end{itemize}
+        \item Assess vulnerabilities using Husky and CW-Lite boards;
+        \item Execute attack:
+        \begin{itemize}
+            \item \textit{Passive}: Perform time analysis and Differential Power Analysis (DPA)
+            \item \textit{Active}: Apply clock/voltage glitching
         \end{itemize}
     \end{itemize}
     
-    \item \textbf{Adaptive Countermeasure Design}
+    \item \textbf{Prototype Adaptive Countermeasures}
     \begin{itemize}[leftmargin=2em]
-        \item Algorithm-aware protection strategies:
+        \item Develop algorithm-aware protection strategies:
         \begin{itemize}
-            \item Masking: Implementing runtime techniques to obscure sensitive data and operations without compromising efficie;
-            \item Fault tolerant operations: : Designing systems capable of maintaining functionality and security in the presence of induced faults.
+            \item Implement masking techniques to obscure sensitive data without efficiency loss
+            \item Design fault-tolerant operations to resist induced faults
+        \end{itemize}
+        \item Deploy countermeasures across platforms:
+        \begin{itemize}
+            \item Integrate software protections on embedded systems (Cortex-M4/M3)
+            \item Implement hardware mitigations in FPGA architectures
         \end{itemize}
     \end{itemize}
     
-    \item \textbf{Quantitative Security Benchmarking}
+    \item \textbf{Validate Implementations and Benchmark Security}
+    \begin{itemize}[leftmargin=2em]
+        \item Test software countermeasures on Cortex-M3/M4 processors
+        \item Verify hardware countermeasures using PolarFire and Xilinx FPGAs
+        \item Quantify security improvements:
+    \end{itemize}
+    
     \begin{center}
-    \rowcolors{2}{gray!20}{white} % Added row coloring with alternation
+    \rowcolors{2}{gray!20}{white}
     \resizebox{0.95\textwidth}{!}{%
     \begin{tabular}{|l|c|}
         \toprule
-        \rowcolor{gray!40} % Darker header row
+        \rowcolor{gray!40}
         \textbf{Metric} & \textbf{Evaluation Methodology} \\
         \midrule
-        Side-channel resistance & \makecell{Practical approach and Test Vector Leakage Assessment (TVLA)} \\
-         \midrule
-        Computational overhead & Cycle count analysis vs. baseline specifications \\
+        Measure side-channel resistance & \makecell{Practical approach and Test Vector Leakage Assessment (TVLA)} \\
+        \midrule
+        Assess computational overhead & Cycle count analysis vs. baseline specifications \\
         \bottomrule
     \end{tabular}
     }
     \end{center}
 \end{enumerate}
 
-More specifically, The methodology comprises the following steps:
-(1) \textit{Attack surface enumeration} involves identifying targets, assessing potential 
-side-channel vulnerabilities, and evaluating these targets 
-using Husky and CW-Lite boards.
-(2) \textit{Countermeasure prototyping} will be done by tailoring an algorithmic countermeasure to the 
-attack and then it will be implemented in a software and hardware. 
-(3) \textit{Validation} will involve implementing and measure the software countermeasure on 
-Cortex-M3 and M4 processors, and the hardware countermeasure on FPGAs, 
-followed by testing on PolarFire and Xilinx platforms.
 
-To achieve our objectives, we will need to acquire the materials 
-listed in Table~\ref{tab:hardware_components}. Additionally, I 
-plan to hire a PhD student to develop a framework for side-channel 
-analysis and cryptographic hardware security.
+
 
 \subsection*{Impacts and Outcomes}
 
 \paragraph{Impacts on \'Ecole Polytechnique de Paris.} 
-Producing new knowledge in the hardware security domain aligns with the objectives of the cybersecurity 
+Producing new topic in the research of hardware security domain aligns with the objectives of the cybersecurity 
 program at \emph{École Polytechnique de Paris}, which aims to equip students with advanced 
 expertise in cryptographic security, hardware security, and side-channel analysis. By fostering 
 research and innovation in these critical areas, the program contributes to the development of 
 next-generation security professionals capable of addressing emerging threats in cryptography 
 and beyond.
 
-\paragraph{Industrial Impact.} Establishing connections with industry, 
-particularly in embedded security and hardware-based cryptographic 
-implementations, to evaluate the practical adoption of countermeasures. 
-My experience at \href{https://www.qualcomm.com/}{Qualcomm} provides a 
-strong foundation for building future collaborations. Additionally, I 
-have connections with professionals such as Matthieu Rivain and Sonia 
-Belaïd from \href{https://www.cryptoexperts.com/people/}{CryptoExperts}, 
-as well as Christine Cloostermans at 
-\href{https://www.nxp.com/company/about-nxp/smarter-world-blog/BL-EMBRACING-EQUITY-ON-EVERY-LEVEL}{NXP}, 
-facilitating real-world feedback and further industrial partnerships.
+\paragraph{Industrial Impact.} Building on my industrial experience at 
+\href{https://www.qualcomm.com/}{Qualcomm}, this project seeks to develop the expertise necessary to 
+train professionals in evaluating physical threats to cryptography. Additionally, we will empower 
+specialists with the skills required to design and implement secure software and hardware solutions. 
+Through dynamic knowledge transfer between academia and industry, we will ensure that cutting-edge research 
+is effectively translated into practical security applications.
+
+
+%Establishing connections with industry, 
+%particularly in embedded security and hardware-based cryptographic 
+%implementations, to evaluate the practical adoption of countermeasures. 
+%My experience at \href{https://www.qualcomm.com/}{Qualcomm} provides a 
+%strong foundation for building future collaborations. Additionally, I 
+%have connections with professionals such as Matthieu Rivain and Sonia 
+%Belaïd from \href{https://www.cryptoexperts.com/people/}{CryptoExperts}, 
+%as well as Christine Cloostermans at 
+%\href{https://www.nxp.com/company/about-nxp/smarter-world-blog/BL-EMBRACING-EQUITY-ON-EVERY-LEVEL}{NXP}, 
+%facilitating real-world feedback and further industrial partnerships.
 
 \paragraph{Publications and scientific outcome.} Targeting top-tier cryptography and security conferences and journals such as 
 \href{https://ches.iacr.org/index.php}{CHES}, \href{https://eurocrypt.iacr.org/}{EUROCRYPT}, 

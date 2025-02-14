@@ -23,3 +23,61 @@ security evaluation regarding its physical aspects. While presenting these chall
 proposal outlining strategies to address the evaluation of security and measurement of the countermeasures against side-channel 
 attacks. 
 
+
+---
+methodology
+
+\begin{enumerate}[leftmargin=*, label=\textbf{\arabic*.}, series=main]
+    \item \textbf{Systematic Vulnerability Analysis}
+    \begin{itemize}[leftmargin=2em]
+        \item Investigation targets: NIST PQC candidates (\href{https://csrc.nist.gov/projects/post-quantum-cryptography/round-4-submissions}{Round 4}, \href{https://csrc.nist.gov/projects/pqc-dig-sig/round-2-additional-signatures}{Additional Call}), 
+        \href{https://www.kpqc.or.kr/competition.html}{Korean PQC}, and \href{https://niccs.org.cn/en/notice/}{China PQC}.
+        \item Attack methodologies:
+        \begin{itemize}
+            \item \textit{Passive}: Time analysis, and Differential power analysis (DPA)
+            \item \textit{Active}: Clock and voltage glitching
+        \end{itemize}
+    \end{itemize}
+    
+    \item \textbf{Adaptive Countermeasure Design}
+    \begin{itemize}[leftmargin=2em]
+        \item Algorithm-aware protection strategies:
+        \begin{itemize}
+            \item Masking: Implementing runtime techniques to obscure sensitive data and operations without compromising efficie;
+            \item Fault tolerant operations: : Designing systems capable of maintaining functionality and security in the presence of induced faults.
+        \end{itemize}
+    \end{itemize}
+    
+    \item \textbf{Quantitative Security Benchmarking}
+    \begin{center}
+    \rowcolors{2}{gray!20}{white} % Added row coloring with alternation
+    \resizebox{0.95\textwidth}{!}{%
+    \begin{tabular}{|l|c|}
+        \toprule
+        \rowcolor{gray!40} % Darker header row
+        \textbf{Metric} & \textbf{Evaluation Methodology} \\
+        \midrule
+        Side-channel resistance & \makecell{Practical approach and Test Vector Leakage Assessment (TVLA)} \\
+         \midrule
+        Computational overhead & Cycle count analysis vs. baseline specifications \\
+        \bottomrule
+    \end{tabular}
+    }
+    \end{center}
+\end{enumerate}
+
+More specifically, The methodology comprises the following steps:
+(1) \textit{Attack surface enumeration} involves identifying targets, assessing potential 
+side-channel vulnerabilities, and evaluating these targets 
+using Husky and CW-Lite boards.
+(2) \textit{Countermeasure prototyping} will be done by tailoring an algorithmic countermeasure to the 
+attack and then it will be implemented in a software and hardware. 
+(3) \textit{Validation} will involve implementing and measure the software countermeasure on 
+Cortex-M3 and M4 processors, and the hardware countermeasure on FPGAs, 
+followed by testing on PolarFire and Xilinx platforms.
+
+To achieve our objectives, we will need to acquire the materials 
+listed in Table~\ref{tab:hardware_components}. Additionally, I 
+plan to hire a PhD student to develop a framework for side-channel 
+analysis and cryptographic hardware security.
+
