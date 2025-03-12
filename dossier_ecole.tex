@@ -1,4 +1,6 @@
 \documentclass[11pt, a4paper]{article}
+\usepackage{threeparttable} % Add this to your preamble
+
 \input{package_macros.tex}
 
 \begin{document}
@@ -323,34 +325,40 @@ $--$ & $--$ & $--$ & €10,635  & $--$ \\
 %the costs for internship is estimated in X, 
 %and the overall project cost, including equipment, is €97,635 + X. FIXME
 
+
 \begin{table}[H]
     \centering
-   \caption{Budget Breakdown}
-   \resizebox{0.5\textwidth}{!}{
+    \caption{Budget Breakdown}
+    \resizebox{0.55\textwidth}{!}{%
+    \begin{threeparttable}
     \begin{tabular}{|ll|l|}
         \toprule
         \textbf{Category} & \textbf{Details} & \textbf{Amount} (€) \\
         \midrule
         \multirow{3}{*}{Personnel} 
-            & 1 PhD & €157\,000\\
-            & 2 x 6-month M2 interns & €8\,352$^1$ \\
+            & 1 PhD & €157K\tnote{a}\\
+            & 2 x 6-month M2 interns & €8,352\tnote{b}\\
         \midrule
         \multirow{2}{*}{Equipment} 
             & Hardware & €10,635 \\
-            & Laptop for PhD & -- \\
+            & Laptop for PhD & €3K \\
         \midrule
         \multirow{3}{*}{Travel} 
             & International conference (Overseas) & €3K/year \\
             & International conference (Europe) & €2K/year \\
             & National workshops \& seminars & €1K/year \\
         \midrule
-        \textbf{Total} &  & €XXX \\
+        \textbf{Total} &  & €196,987 \\
         \bottomrule
     \end{tabular}
+    \begin{tablenotes}
+    \item[a]PhD student starting in 2025 is €157,000, and it will rise to €163,500 for a thesis starting in 2026.
+    \item[b] According to the \'Ecole: For trainees, the minimum remuneration is 4.35 euros per hour, with no additional charge.
+    \end{tablenotes}
+    \end{threeparttable}
     }
     \label{tab:budget}
 \end{table}
-\footnote{According to the \'Ecole: For trainees, the minimum remuneration is 4.35 euros per hour, with no additional charge.}
 \newpage
 \begin{landscape}
 \vspace{-2cm}
