@@ -21,10 +21,12 @@
 %    \end{itemize}
 %\end{enumerate}
 
-Once a quantum computer capable of running Shor’s algorithm~\cite{365700} is built, 
-currently deployed public-key cryptography \textbf{will be catastrophically and irreversibly broken}, 
-exposing all past and future encrypted communications. In response, there is a global effort to 
-develop cryptographic systems resistant to quantum attacks, known as Post-Quantum Cryptography (PQC). 
+With the advent of quantum computers capable of running Shor's 
+algorithm~\cite{365700}, currently deployed public-key 
+cryptography \textbf{will be catastrophically and irreversibly broken}, 
+exposing all past and future encrypted communications. 
+This risk has pushed a global initiative to develop cryptographic 
+systems resistant to quantum attacks, known as Post-Quantum Cryptography (PQC). 
 Research in PQC has intensified, particularly following 
 \href{https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization/call-for-proposals}
 {the launch of the United States National Institute of Standards and Technology (NIST) PQC standardization project in 2016}. 
@@ -40,17 +42,23 @@ reference implementations.
 (4) The final stage involves integrating these solutions into real-world applications, ensuring their adoption 
 through production-ready implementations.
 
-While schemes like Kyber and Dilithium (two post-quantum schemes) have reached advanced stages, post-quantum cryptography 
-remains an active research area with \emph{critical challenges}. Following \href{https://www.nist.gov/news-events/news/2023/07/nist-announces-additional-digital-signature-candidates-pqc-standardization}
+
+While schemes like Kyber and Dilithium (two post-quantum schemes) 
+have reached advanced stages, post-quantum cryptography remains an 
+active research area with \emph{critical challenges}. Following 
+\href{https://www.nist.gov/news-events/news/2023/07/nist-announces-additional-digital-signature-candidates-pqc-standardization}
 {NIST's 2023 announcement of additional digital signature candidates}, 
-improving efficiency and \textbf{hardening implementations against 
-side-channel attacks (SCA)} have become \textbf{crucial}. As cryptographic schemes transition from 
-theory to practice, their security in real-world deployments depends not only on their mathematical 
-foundations but also on their resilience to physical attacks. Strengthening implementations against 
-SCA is mandatory to preventing adversaries from extracting secret information through power analysis, 
-electromagnetic leakage, or fault injection. This aspect of PQC is essential for secure adoption in 
-applications such as hardware security modules, IoT devices, and vehicular communication—where 
-attackers have physical access and SCA defenses are not optional but necessary. 
+improving efficiency and \textbf{hardening implementations against side-channel attacks (SCA)} 
+have become \textbf{crucial}. As PQC transitions from theory to practice, 
+its security in real-world deployments depends not 
+only on its mathematical foundations but also on its 
+resilience to physical attacks. Strengthening implementations against 
+SCA is mandatory to prevent adversaries from extracting secret 
+information through power analysis, electromagnetic leakage, or 
+fault injection. This aspect of PQC is essential for secure adoption 
+in applications such as hardware security modules, IoT devices, and 
+vehicular communication---where attackers have physical access and 
+SCA defenses are not optional but necessary.
 
 \textbf{The goal of this project is to ensure cryptographic security beyond mathematical 
 guarantees by evaluating and strengthening its resistance to physical attacks.}
@@ -58,8 +66,8 @@ guarantees by evaluating and strengthening its resistance to physical attacks.}
 \subsection*{Security Analysis of Post-Quantum Schemes}\label{sec:an}\vspace{-0.1cm}
 
 Cryptosystems face vulnerabilities to SCA, wherein an adversary can deduce 
-confidential information from physical observations, such as timing,
-electromagnetic emanation, or power consumption, made during the execution of 
+confidential information from physical observations--such as timing,
+electromagnetic emanation, or power consumption--made during the execution of 
 computations using sensitive data~\cite{brumley2005remote, KocherJJR11,10.1007/3-540-48405-1_25}.
 These attacks can be classified as passive, where the a
 dversary simply observes leaked information without interfering, or active, 
@@ -221,7 +229,8 @@ and partnerships.
 \paragraph{Funding Prospects.}The plan is to set up this project and acquire 
 the necessary materials to consolidate the results and prepare an application for 
 European Research Council (ERC) funding in 2026. The deadline for the Starting Grant is July 2026.
-
+I did take into consideration and added at calendar the period for preparing and 
+submiting the grant to ERC.
 %The plan is to establish this project, 
 %set up the necessary equipment, consolidate the results, 
 %and then prepare an application for funding from the E
@@ -329,7 +338,7 @@ $--$ & $--$ & $--$ & €10,635  & $--$ \\
 \begin{table}[H]
     \centering
     \caption{Budget Breakdown}
-    \resizebox{0.55\textwidth}{!}{%
+    \resizebox{0.5\textwidth}{!}{%
     \begin{threeparttable}
     \begin{tabular}{|ll|l|}
         \toprule
