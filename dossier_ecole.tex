@@ -287,19 +287,19 @@ European Research Council (ERC) funding in 2026. The deadline for the Starting G
 \centering
 \caption{Budget for hardware equipment.}
 \label{tab:hardware_components}
-\resizebox{0.9\textwidth}{!}{%
+\resizebox{0.8\textwidth}{!}{%
 \begin{tabular}{|l|p{8cm}|c|c|l|}
 \toprule
-\textbf{Hardware} & \textbf{Usage} & \textbf{Qty} & \textbf{Total Price (€)} & \textbf{Link} \\ \midrule
-Husk Board & Side-channel acquisition / fault attack & 2 & 1,060 & \href{https://www.mouser.fr/ProductDetail/NewAE/NAE-CWHUSKY-SK1?qs=rQFj71Wb1eUq6zUbSt2x8g\%3D\%3D}{Mouser} \\ \hline
-Server & Run analysis and store the data acquired by the boards. & 1 & 3,100 & \\ \midrule
-Polarfire FPGA & Development of specific hardware for cryptography & 1 & 150 & \href{https://www.microchip.com/en-us/development-tool/mpfs-disco-kit}{Microchip} \\ \midrule
-Arty S7: Spartan-7 FPGA & Development of specific hardware for cryptography & 1 & 300 & \href{https://digilent.com/shop/arty-s7-spartan-7-fpga-development-board/}{Digilent} \\ \midrule
-CW-lite ARM & Small ARM board for side-channel attacks & 2 & 700 & \href{https://www.newae.com/products/nae-cwlite-arm}{NewAE} \\ \midrule
-Nucleo ARM & Board with Cortex-M3/M4 (NUCLEO-F207ZG/NUCLEO-L4R5ZI) & 4 & 400 & \href{https://www.mouser.fr/}{Mouser}\\ \midrule
-PicoScope 3000E & Oscilloscope & 1 & 4,225 & \href{https://www.picotech.com/oscilloscope/picoscope-3000e-series-500-mhz-5gs-digital-usb-oscilloscope?model=3418E}{PicoTech} \\ \midrule
-Wires / Cables / Others & Connection with oscilloscope, soldering kit, etc. & 1 & 700 & \\ \bottomrule
-$--$ & $--$ & $--$ & 10,635  & $--$ \\
+\textbf{Hardware} & \textbf{Usage} & \textbf{Qty} & \textbf{Total Price} (€) & \textbf{Link} \\ \midrule
+Husk Board & Side-channel acquisition / fault attack & 2 & €1,060 & \href{https://www.mouser.fr/ProductDetail/NewAE/NAE-CWHUSKY-SK1?qs=rQFj71Wb1eUq6zUbSt2x8g\%3D\%3D}{Mouser} \\ \hline
+Server & Run analysis and store the data acquired by the boards. & 1 & €3,100 & \\ \midrule
+Polarfire FPGA & Development of specific hardware for cryptography & 1 & €150 & \href{https://www.microchip.com/en-us/development-tool/mpfs-disco-kit}{Microchip} \\ \midrule
+Arty S7: Spartan-7 FPGA & Development of specific hardware for cryptography & 1 & €300 & \href{https://digilent.com/shop/arty-s7-spartan-7-fpga-development-board/}{Digilent} \\ \midrule
+CW-lite ARM & Small ARM board for side-channel attacks & 2 & €700 & \href{https://www.newae.com/products/nae-cwlite-arm}{NewAE} \\ \midrule
+Nucleo ARM & Board with Cortex-M3/M4 (NUCLEO-F207ZG/NUCLEO-L4R5ZI) & 4 & €400 & \href{https://www.mouser.fr/}{Mouser}\\ \midrule
+PicoScope 3000E & Oscilloscope & 1 & €4,225 & \href{https://www.picotech.com/oscilloscope/picoscope-3000e-series-500-mhz-5gs-digital-usb-oscilloscope?model=3418E}{PicoTech} \\ \midrule
+Wires / Cables / Others & Connection with oscilloscope, soldering kit, etc. & 1 & €700 & \\ \bottomrule
+$--$ & $--$ & $--$ & €10,635  & $--$ \\
 \bottomrule
 \end{tabular}%
 }
@@ -326,13 +326,14 @@ $--$ & $--$ & $--$ & 10,635  & $--$ \\
 \begin{table}[H]
     \centering
    \caption{Budget Breakdown}
+   \resizebox{0.5\textwidth}{!}{
     \begin{tabular}{|ll|l|}
         \toprule
-        \textbf{Category} & \textbf{Details} & \textbf{Amount} \\
+        \textbf{Category} & \textbf{Details} & \textbf{Amount} (€) \\
         \midrule
         \multirow{3}{*}{Personnel} 
-            & 1 PhD & €XXX \\
-            & 2 x 6-month M2 interns & €XXX \\
+            & 1 PhD & €157\,000\\
+            & 2 x 6-month M2 interns & €8\,352$^1$ \\
         \midrule
         \multirow{2}{*}{Equipment} 
             & Hardware & €10,635 \\
@@ -346,8 +347,10 @@ $--$ & $--$ & $--$ & 10,635  & $--$ \\
         \textbf{Total} &  & €XXX \\
         \bottomrule
     \end{tabular}
+    }
     \label{tab:budget}
 \end{table}
+\footnote{According to the \'Ecole: For trainees, the minimum remuneration is 4.35 euros per hour, with no additional charge.}
 \newpage
 \begin{landscape}
 \vspace{-2cm}
@@ -371,7 +374,7 @@ $--$ & $--$ & $--$ & 10,635  & $--$ \\
 %\end{enumerate}
 
 \subsection*{CV - Gustavo Banegas}
-Current position: INRIA ISFP \& Lecturer at \'Ecole Polytechnique de Paris~\\
+Current position: INRIA ISFP \& Chargé d'Enseignement in Computer Science, École polytechnique ~\\
 \href{www.cryptme.in}{Personal Webpage}~\\
 gustavo.souza-banegas@polytechnique.edu~\\
 \input{cv.tex}
