@@ -29,9 +29,11 @@ This risk has pushed a global initiative to develop cryptographic
 systems resistant to quantum attacks, known as Post-Quantum Cryptography (PQC). 
 Research in PQC has intensified, particularly following 
 \href{https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization/call-for-proposals}
-{the launch of the United States National Institute of Standards and Technology (NIST) PQC standardization project in 2016}. 
+{the launch of the United States National Institute of Standards and Technology (NIST) PQC standardization project in 2016}
+and the ongoing call in 2023 of \href{https://www.nist.gov/news-events/news/2023/07/nist-announces-additional-digital-signature-candidates-pqc-standardization}
+{NIST's additional digital signature candidates}.
 However, participation in this project is global, and most countries follow its standards (including 
-the Europe Union).
+the European Union).
 
 The development of cryptographic schemes follows a structured process: (1) It begins with the establishment of computational hardness assumptions through 
 mathematical analysis, providing the theoretical foundation for security.
@@ -43,12 +45,13 @@ reference implementations.
 through production-ready implementations.
 
 
-While schemes like Kyber and Dilithium (two post-quantum schemes) 
-have reached advanced stages, post-quantum cryptography remains an 
-active research area with \emph{critical challenges}. Following 
-\href{https://www.nist.gov/news-events/news/2023/07/nist-announces-additional-digital-signature-candidates-pqc-standardization}
-{NIST's 2023 announcement of additional digital signature candidates}, 
-improving efficiency and \textbf{hardening implementations against side-channel attacks (SCA)} 
+The first international PQC standards were published last year
+with \href{https://csrc.nist.gov/pubs/fips/204/final}{ML-DSA} 
+(signature scheme) and \href{https://csrc.nist.gov/pubs/fips/203/final}{ML-KEM} 
+(encryption scheme), 
+however, post-quantum cryptography remains an 
+active research area with \emph{critical challenges}. 
+Improving efficiency and \textbf{hardening implementations against side-channel attacks (SCA)} 
 have become \textbf{crucial}. As PQC transitions from theory to practice, 
 its security in real-world deployments depends not 
 only on its mathematical foundations but also on its 
@@ -83,15 +86,15 @@ adaptability to others. Consequently, securing each implementation
 demands a unique approach, necessitating expertise in both 
 cryptographic engineering and side-channel analysis. Unfortunately, 
 the pool of individuals capable of combining these essential skills 
-remains limited to a select group of professionals. Based on my 
-experience in security architecture within the industry, there is a 
+remains limited to a select group of professionals. Based on my experience in the 
+security architecture industry, there is a 
 clear shortage of professionals with the necessary expertise in this 
 field. We aim to give a first step to develop the knowledge
 and foundation for training students in hardware security.
 
 
 
-\paragraph{Methodology.} The proposed methodology comprises three 
+\paragraph{Methodology.} This project comprises three 
 interdependent phases designed to bridge gaps 
 in hardware security and achieve practical implementation robustness:
 
@@ -150,7 +153,7 @@ analysis and cryptographic hardware security framework.
 
 %\subsection*{Impacts and Outcomes}
 
-\paragraph{Impacts on \'Ecole Polytechnique de Paris (EPP).}
+\paragraph{Impacts on Institute Polytechnique de Paris (IPP).}
 This project introduces a new research topic in hardware security, 
 aligning with the objectives of the cybersecurity program at 
 EPP. 
@@ -229,8 +232,7 @@ and partnerships.
 \paragraph{Funding Prospects.}The plan is to set up this project and acquire 
 the necessary materials to consolidate the results and prepare an application for 
 European Research Council (ERC) funding in 2026. The deadline for the Starting Grant is July 2026.
-I did take into consideration and added at calendar the period for preparing and 
-submiting the grant to ERC.
+The development and submission of this proposal is included in the project calendar below.
 %The plan is to establish this project, 
 %set up the necessary equipment, consolidate the results, 
 %and then prepare an application for funding from the E
@@ -362,7 +364,7 @@ $--$ & $--$ & $--$ & €$11\,235$  & $--$ \\
     \end{tabular}
     \begin{tablenotes}
     \item[a]PhD student starting in 2025 is €$157\,000$, and it will rise to €$163\,500$ for a thesis starting in 2026.
-    \item[b] According to the \'Ecole: For trainees, the minimum remuneration is $4.35$ euros per hour, with no additional charge.
+    \item[b] According to the IPP: For trainees, the minimum remuneration is $4.35$ euros per hour, with no additional charge.
     \end{tablenotes}
     \end{threeparttable}
     }
@@ -391,7 +393,7 @@ $--$ & $--$ & $--$ & €$11\,235$  & $--$ \\
 %\end{enumerate}
 
 \subsection*{CV - Gustavo Banegas}
-Current position: INRIA ISFP \& Chargé d'Enseignement in Computer Science, École polytechnique ~\\
+Current position: INRIA Inria Starting Faculty Position \& Chargé d'Enseignement in Computer Science, École polytechnique ~\\
 \href{www.cryptme.in}{Personal Webpage}~\\
 gustavo.souza-banegas@polytechnique.edu~\\
 \input{cv.tex}
